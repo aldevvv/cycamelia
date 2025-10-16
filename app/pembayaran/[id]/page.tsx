@@ -1,0 +1,456 @@
+"use client";
+
+import Image from "next/image";
+import Link from "next/link";
+import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
+import Navbar from "@/components/navbar";
+import Footer from "@/components/footer";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Separator } from "@/components/ui/separator";
+import { Input } from "@/components/ui/input";
+import { useCart } from "@/lib/use-cart";
+import { 
+  Minus, 
+  Plus, 
+  ArrowLeft, 
+  ShoppingBag,
+  MessageCircle
+} from "lucide-react";
+
+// Sample product data - 22 products sesuai dengan gambar yang ada
+const allProducts = [
+  {
+    id: 1,
+    name: "Elegant Premium Square",
+    price: 250000,
+    image: "/images/1.jpg",
+    description: "Hijab segi empat premium dengan bahan silk yang nyaman dan elegan",
+    category: "square",
+  },
+  {
+    id: 2,
+    name: "Luxury Instant Hijab",
+    price: 350000,
+    image: "/images/2.jpg",
+    description: "Hijab instan praktis dengan detail bordir eksklusif",
+    category: "instant",
+  },
+  {
+    id: 3,
+    name: "Royal Pashmina",
+    price: 450000,
+    image: "/images/3.jpg",
+    description: "Pashmina premium dengan tekstur lembut dan warna eksklusif",
+    category: "pashmina",
+  },
+  {
+    id: 4,
+    name: "Classic Square Collection",
+    price: 200000,
+    image: "/images/4.jpg",
+    description: "Koleksi hijab segi empat klasik dengan motif timeless",
+    category: "square",
+  },
+  {
+    id: 5,
+    name: "Modern Square Pattern",
+    price: 275000,
+    image: "/images/5.jpg",
+    description: "Hijab segi empat modern dengan pattern kontemporer",
+    category: "square",
+  },
+  {
+    id: 6,
+    name: "Premium Instant Series",
+    price: 325000,
+    image: "/images/6.jpg",
+    description: "Seri hijab instan premium dengan material terbaik",
+    category: "instant",
+  },
+  {
+    id: 7,
+    name: "Silk Pashmina Deluxe",
+    price: 550000,
+    image: "/images/7.jpg",
+    description: "Pashmina silk deluxe dengan finishing premium",
+    category: "pashmina",
+  },
+  {
+    id: 8,
+    name: "Casual Square Daily",
+    price: 180000,
+    image: "/images/8.jpg",
+    description: "Hijab segi empat casual untuk daily wear",
+    category: "square",
+  },
+  {
+    id: 9,
+    name: "Elegant Instant Premium",
+    price: 380000,
+    image: "/images/9.jpg",
+    description: "Hijab instan elegan dengan detail premium",
+    category: "instant",
+  },
+  {
+    id: 10,
+    name: "Classic Pashmina",
+    price: 320000,
+    image: "/images/10.jpg",
+    description: "Pashmina klasik dengan warna timeless",
+    category: "pashmina",
+  },
+  {
+    id: 11,
+    name: "Floral Square Collection",
+    price: 290000,
+    image: "/images/11.jpg",
+    description: "Koleksi hijab segi empat dengan motif floral eksklusif",
+    category: "square",
+  },
+  {
+    id: 12,
+    name: "Premium Instant Basic",
+    price: 295000,
+    image: "/images/12.jpg",
+    description: "Hijab instan basic premium dengan berbagai pilihan warna",
+    category: "instant",
+  },
+  {
+    id: 13,
+    name: "Signature Square Exclusive",
+    price: 420000,
+    image: "/images/13.jpg",
+    description: "Hijab segi empat eksklusif dengan desain signature",
+    category: "square",
+  },
+  {
+    id: 14,
+    name: "Luxury Instant Max",
+    price: 480000,
+    image: "/images/14.jpg",
+    description: "Hijab instan mewah dengan detail premium maksimal",
+    category: "instant",
+  },
+  {
+    id: 15,
+    name: "Diamond Pashmina",
+    price: 650000,
+    image: "/images/15.jpg",
+    description: "Pashmina premium kelas diamond dengan kualitas tertinggi",
+    category: "pashmina",
+  },
+  {
+    id: 16,
+    name: "Vintage Square Heritage",
+    price: 310000,
+    image: "/images/16.jpg",
+    description: "Hijab segi empat dengan motif vintage yang elegan",
+    category: "square",
+  },
+  {
+    id: 17,
+    name: "Smart Instant Pro",
+    price: 360000,
+    image: "/images/17.jpg",
+    description: "Hijab instan profesional dengan fitur smart design",
+    category: "instant",
+  },
+  {
+    id: 18,
+    name: "Velvet Pashmina Royal",
+    price: 580000,
+    image: "/images/18.jpg",
+    description: "Pashmina velvet dengan sentuhan royal yang mewah",
+    category: "pashmina",
+  },
+  {
+    id: 19,
+    name: "Geometric Square Modern",
+    price: 265000,
+    image: "/images/19.jpg",
+    description: "Hijab segi empat dengan motif geometric modern",
+    category: "square",
+  },
+  {
+    id: 20,
+    name: "Instant Elegant Plus",
+    price: 410000,
+    image: "/images/20.jpg",
+    description: "Hijab instan elegan dengan tambahan fitur premium",
+    category: "instant",
+  },
+  {
+    id: 21,
+    name: "Bamboo Pashmina Eco",
+    price: 520000,
+    image: "/images/21.jpg",
+    description: "Pashmina eco-friendly dari material bamboo premium",
+    category: "pashmina",
+  },
+  {
+    id: 22,
+    name: "Artisan Square Limited",
+    price: 750000,
+    image: "/images/22.jpg",
+    description: "Hijab segi empat limited edition dengan sentuhan artisan",
+    category: "square",
+  },
+];
+
+interface PembayaranPageProps {
+  params: Promise<{ id: string }>;
+}
+
+export default function SingleProductPembayaran({ params }: PembayaranPageProps) {
+  const router = useRouter();
+  const { addToCart } = useCart();
+  const [quantity, setQuantity] = useState(1);
+  const [customerInfo, setCustomerInfo] = useState({
+    name: "",
+    phone: "",
+    address: "",
+    notes: ""
+  });
+  const [productId, setProductId] = useState<number | null>(null);
+  
+  useEffect(() => {
+    const getParams = async () => {
+      const resolvedParams = await params;
+      setProductId(parseInt(resolvedParams.id));
+    };
+    getParams();
+  }, [params]);
+
+  const product = allProducts.find(p => p.id === productId);
+  
+  useEffect(() => {
+    if (productId && !product) {
+      router.push("/katalog");
+    }
+  }, [productId, product, router]);
+
+  const formatPrice = (price: number) => {
+    return new Intl.NumberFormat("id-ID", {
+      style: "currency",
+      currency: "IDR",
+      minimumFractionDigits: 0,
+    }).format(price);
+  };
+
+  const handleQuantityChange = (newQuantity: number) => {
+    if (newQuantity >= 1) {
+      setQuantity(newQuantity);
+    }
+  };
+
+  const handleWhatsAppCheckout = () => {
+    const message = `*ORDER BARU - CYCAMELIA*\n\n` +
+      `*Data Pelanggan:*\n` +
+      `Nama: ${customerInfo.name || 'Tidak diisi'}\n` +
+      `No. HP: ${customerInfo.phone || 'Tidak diisi'}\n` +
+      `Alamat: ${customerInfo.address || 'Tidak diisi'}\n\n` +
+      `*Pesanan:*\n` +
+      `${product?.name} (x${quantity}) - ${formatPrice((product?.price || 0) * quantity)}\n\n` +
+      `*Total: ${formatPrice((product?.price || 0) * quantity + 15000)}* (termasuk ongkir)\n\n` +
+      `Catatan: ${customerInfo.notes || 'Tidak ada'}\n\n` +
+      `Mohon konfirmasi ketersediaan dan total pembayaran.`;
+    
+    const whatsappUrl = `https://wa.me/6281234567890?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, "_blank");
+  };
+
+  const shippingCost = 15000; // Flat shipping cost
+  const totalWithShipping = (product?.price || 0) * quantity + shippingCost;
+
+  if (!product) {
+    return (
+      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+        <div className="text-center">
+          <p>Produk tidak ditemukan</p>
+          <Button onClick={() => router.push("/katalog")}>Kembali ke Katalog</Button>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="min-h-screen bg-gray-50">
+      <Navbar />
+      
+      {/* Header */}
+      <div className="bg-gradient-to-r from-amber-600 to-amber-700 text-white py-8">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center space-x-4">
+            <Link href="/katalog" className="text-white/80 hover:text-white transition-colors">
+              <ArrowLeft className="h-5 w-5" />
+            </Link>
+            <h1 className="text-3xl font-bold">Pembayaran</h1>
+          </div>
+        </div>
+      </div>
+
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          {/* Product Details */}
+          <div className="lg:col-span-2 space-y-6">
+            <Card>
+              <CardHeader>
+                <CardTitle>Detail Produk</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="flex items-center space-x-6 p-4 border rounded-lg">
+                  <div className="w-32 h-32 relative rounded-lg overflow-hidden flex-shrink-0">
+                    <Image
+                      src={product.image}
+                      alt={product.name}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                  
+                  <div className="flex-1">
+                    <h3 className="font-semibold text-lg text-gray-900">{product.name}</h3>
+                    <p className="text-gray-600 text-sm mt-1">{product.description}</p>
+                    <p className="text-amber-600 font-semibold text-lg mt-2">{formatPrice(product.price)}</p>
+                    
+                    <div className="flex items-center space-x-2 mt-4">
+                      <span className="text-sm text-gray-700">Jumlah:</span>
+                      <div className="flex items-center space-x-2">
+                        <Button
+                          variant="outline"
+                          size="icon"
+                          className="h-8 w-8"
+                          onClick={() => handleQuantityChange(quantity - 1)}
+                        >
+                          <Minus className="h-3 w-3" />
+                        </Button>
+                        <Input
+                          type="number"
+                          value={quantity}
+                          onChange={(e) => handleQuantityChange(parseInt(e.target.value) || 1)}
+                          className="w-16 text-center"
+                          min="1"
+                        />
+                        <Button
+                          variant="outline"
+                          size="icon"
+                          className="h-8 w-8"
+                          onClick={() => handleQuantityChange(quantity + 1)}
+                        >
+                          <Plus className="h-3 w-3" />
+                        </Button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Customer Information */}
+            <Card>
+              <CardHeader>
+                <CardTitle>Informasi Pelanggan</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                    Nama Lengkap *
+                  </label>
+                  <Input
+                    placeholder="Masukkan nama Anda"
+                    value={customerInfo.name}
+                    onChange={(e) => setCustomerInfo({...customerInfo, name: e.target.value})}
+                    required
+                  />
+                </div>
+                
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                    Nomor WhatsApp *
+                  </label>
+                  <Input
+                    placeholder="08xx-xxxx-xxxx"
+                    value={customerInfo.phone}
+                    onChange={(e) => setCustomerInfo({...customerInfo, phone: e.target.value})}
+                    required
+                  />
+                </div>
+                
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                    Alamat Pengiriman *
+                  </label>
+                  <textarea
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent"
+                    rows={3}
+                    placeholder="Masukkan alamat lengkap"
+                    value={customerInfo.address}
+                    onChange={(e) => setCustomerInfo({...customerInfo, address: e.target.value})}
+                    required
+                  ></textarea>
+                </div>
+                
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                    Catatan (opsional)
+                  </label>
+                  <textarea
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent"
+                    rows={2}
+                    placeholder="Catatan khusus untuk pesanan Anda"
+                    value={customerInfo.notes}
+                    onChange={(e) => setCustomerInfo({...customerInfo, notes: e.target.value})}
+                  ></textarea>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Order Summary */}
+          <div className="space-y-6">
+            <Card>
+              <CardHeader>
+                <CardTitle>Ringkasan Pesanan</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="space-y-2">
+                  <div className="flex justify-between text-sm">
+                    <span>{product.name} x {quantity}</span>
+                    <span>{formatPrice(product.price * quantity)}</span>
+                  </div>
+                  <div className="flex justify-between text-sm">
+                    <span>Biaya Pengiriman</span>
+                    <span>{formatPrice(shippingCost)}</span>
+                  </div>
+                  <Separator />
+                  <div className="flex justify-between font-semibold text-lg">
+                    <span>Total</span>
+                    <span className="text-amber-600">{formatPrice(totalWithShipping)}</span>
+                  </div>
+                </div>
+                
+                <div className="space-y-2 pt-4">
+                  <Button 
+                    className="w-full bg-green-600 hover:bg-green-700 text-white"
+                    onClick={handleWhatsAppCheckout}
+                    disabled={!customerInfo.name || !customerInfo.phone || !customerInfo.address}
+                  >
+                    <MessageCircle className="h-4 w-4 mr-2" />
+                    Bayar via WhatsApp
+                  </Button>
+                  <p className="text-xs text-gray-500 text-center">
+                    Anda akan diarahkan ke WhatsApp untuk konfirmasi pesanan
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </div>
+
+      <Footer />
+    </div>
+  );
+}

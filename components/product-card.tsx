@@ -6,7 +6,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Heart, ShoppingBag } from "lucide-react";
 
 interface ProductCardProps {
-  id: number;
+  id: string;
   name: string;
   price: number;
   image: string;
@@ -51,7 +51,7 @@ export default function ProductCard({ id, name, price, image, description }: Pro
         </div>
 
         {/* New Badge */}
-        {id <= 5 && (
+        {parseInt(id) <= 5 && (
           <div className="absolute top-4 left-4 animate-scale-in">
             <span className="bg-red-100 text-red-800 text-xs font-medium px-3 py-1 rounded-full">
               New

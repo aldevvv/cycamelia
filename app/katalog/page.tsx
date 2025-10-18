@@ -9,184 +9,349 @@ import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Search, Filter, Grid, List } from "lucide-react";
 
-// Sample product data - 22 products sesuai dengan gambar yang ada
+// Sample product data - 22 products sesuai dengan Revision.md
 const allProducts = [
   {
-    id: 1,
-    name: "Elegant Premium Square",
-    price: 250000,
+    id: "cycamelia-ciput-arab-tali-latte",
+    name: "Cycamelia Ciput Arab Tali Latte",
+    price: 18000,
     image: "/images/1.jpg",
-    description: "Hijab segi empat premium dengan bahan silk yang nyaman dan elegan",
-    category: "square",
+    description: "Ciput terbuat dari bahan kaos Rayon yang halus, lembut, dan nyaman dipakai",
+    category: "ciput",
+    size: "All Size",
+    details: [
+      "Ciput terbuat dari bahan kaos Rayon",
+      "Bahan Halus, Lembut, dan nyaman dipakai",
+      "Tidak sakit di telinga",
+      "Memiliki tali pengikat yang bisa diatur menyesuaikan lingkar kepala"
+    ]
   },
   {
-    id: 2,
-    name: "Luxury Instant Hijab",
-    price: 350000,
+    id: "cycamelia-ciput-arab-tali-butter",
+    name: "Cycamelia Ciput Arab Tali Butter",
+    price: 18000,
     image: "/images/2.jpg",
-    description: "Hijab instan praktis dengan detail bordir eksklusif",
-    category: "instant",
+    description: "Ciput terbuat dari bahan kaos Rayon yang halus, lembut, dan nyaman dipakai",
+    category: "ciput",
+    size: "All Size",
+    details: [
+      "Ciput terbuat dari bahan kaos Rayon",
+      "Bahan Halus, Lembut, dan nyaman dipakai",
+      "Tidak sakit di telinga",
+      "Memiliki tali pengikat yang bisa diatur menyesuaikan lingkar kepala"
+    ]
   },
   {
-    id: 3,
-    name: "Royal Pashmina",
-    price: 450000,
+    id: "cycamelia-neutral-series",
+    name: "Cycamelia Neutral Series",
+    price: 20000,
     image: "/images/3.jpg",
-    description: "Pashmina premium dengan tekstur lembut dan warna eksklusif",
-    category: "pashmina",
+    description: "Paris Premium dengan bahan yang lebih flowy, soft dan tegak saat dipakai",
+    category: "square",
+    size: "110 × 110cm",
+    details: [
+      "Material Paris Premium",
+      "Serat lebih padat dari paris jaman dulu",
+      "Bahan katun mudah diatur",
+      "Tegap di dahi, cocok banget buat daily karena bahannya PW dan gak bikin gerah",
+      "Bahan lebih flowy, soft dan tegak saat dipakai"
+    ]
   },
   {
-    id: 4,
-    name: "Classic Square Collection",
-    price: 200000,
+    id: "cycamelia-timeless-series",
+    name: "Cycamelia Timeless Series",
+    price: 20000,
     image: "/images/4.jpg",
-    description: "Koleksi hijab segi empat klasik dengan motif timeless",
+    description: "Paris Premium dengan bahan yang lebih flowy, soft dan tegak saat dipakai",
     category: "square",
+    size: "110 × 110cm",
+    details: [
+      "Material Paris Premium",
+      "Serat lebih padat dari paris jaman dulu",
+      "Bahan katun mudah diatur",
+      "Tegap di dahi, cocok banget buat daily karena bahannya PW dan gak bikin gerah",
+      "Bahan lebih flowy, soft dan tegak saat dipakai"
+    ]
   },
   {
-    id: 5,
-    name: "Modern Square Pattern",
-    price: 275000,
+    id: "cycamelia-earth-series",
+    name: "Cycamelia Earth Series",
+    price: 20000,
     image: "/images/5.jpg",
-    description: "Hijab segi empat modern dengan pattern kontemporer",
+    description: "Paris Premium dengan bahan yang lebih flowy, soft dan tegak saat dipakai",
     category: "square",
+    size: "110 × 110cm",
+    details: [
+      "Material Paris Premium",
+      "Serat lebih padat dari paris jaman dulu",
+      "Bahan katun mudah diatur",
+      "Tegap di dahi, cocok banget buat daily karena bahannya PW dan gak bikin gerah",
+      "Bahan lebih flowy, soft dan tegak saat dipakai"
+    ]
   },
   {
-    id: 6,
-    name: "Premium Instant Series",
-    price: 325000,
+    id: "cycamelia-ciput-arab-tali-black",
+    name: "Cycamelia Ciput Arab Tali Black",
+    price: 18000,
     image: "/images/6.jpg",
-    description: "Seri hijab instan premium dengan material terbaik",
-    category: "instant",
+    description: "Ciput terbuat dari bahan kaos Rayon yang halus, lembut, dan nyaman dipakai",
+    category: "ciput",
+    size: "All Size",
+    details: [
+      "Ciput terbuat dari bahan kaos Rayon",
+      "Bahan Halus, Lembut, dan nyaman dipakai",
+      "Tidak sakit di telinga",
+      "Memiliki tali pengikat yang bisa diatur menyesuaikan lingkar kepala"
+    ]
   },
   {
-    id: 7,
-    name: "Silk Pashmina Deluxe",
-    price: 550000,
+    id: "cycamelia-elegant-series",
+    name: "Cycamelia Elegant Series",
+    price: 20000,
     image: "/images/7.jpg",
-    description: "Pashmina silk deluxe dengan finishing premium",
-    category: "pashmina",
+    description: "Paris Premium dengan bahan yang lebih flowy, soft dan tegak saat dipakai",
+    category: "square",
+    size: "110 × 110cm",
+    details: [
+      "Material Paris Premium",
+      "Serat lebih padat dari paris jaman dulu",
+      "Bahan katun mudah diatur",
+      "Tegap di dahi, cocok banget buat daily karena bahannya PW dan gak bikin gerah",
+      "Bahan lebih flowy, soft dan tegak saat dipakai"
+    ]
   },
   {
-    id: 8,
-    name: "Casual Square Daily",
-    price: 180000,
+    id: "cycamelia-serenity-series",
+    name: "Cycamelia Serenity Series",
+    price: 20000,
     image: "/images/8.jpg",
-    description: "Hijab segi empat casual untuk daily wear",
+    description: "Paris Premium dengan bahan yang lebih flowy, soft dan tegak saat dipakai",
     category: "square",
+    size: "110 × 110cm",
+    details: [
+      "Material Paris Premium",
+      "Serat lebih padat dari paris jaman dulu",
+      "Bahan katun mudah diatur",
+      "Tegap di dahi, cocok banget buat daily karena bahannya PW dan gak bikin gerah",
+      "Bahan lebih flowy, soft dan tegak saat dipakai"
+    ]
   },
   {
-    id: 9,
-    name: "Elegant Instant Premium",
-    price: 380000,
+    id: "cycamelia-floral-series",
+    name: "Cycamelia Floral Series",
+    price: 20000,
     image: "/images/9.jpg",
-    description: "Hijab instan elegan dengan detail premium",
-    category: "instant",
+    description: "Paris Premium dengan bahan yang lebih flowy, soft dan tegak saat dipakai",
+    category: "square",
+    size: "110 × 110cm",
+    details: [
+      "Material Paris Premium",
+      "Serat lebih padat dari paris jaman dulu",
+      "Bahan katun mudah diatur",
+      "Tegap di dahi, cocok banget buat daily karena bahannya PW dan gak bikin gerah",
+      "Bahan lebih flowy, soft dan tegak saat dipakai"
+    ]
   },
   {
-    id: 10,
-    name: "Classic Pashmina",
-    price: 320000,
+    id: "cycamelia-ciput-arab-tali-mocca",
+    name: "Cycamelia Ciput Arab Tali Mocca",
+    price: 18000,
     image: "/images/10.jpg",
-    description: "Pashmina klasik dengan warna timeless",
-    category: "pashmina",
+    description: "Ciput terbuat dari bahan kaos Rayon yang halus, lembut, dan nyaman dipakai",
+    category: "ciput",
+    size: "All Size",
+    details: [
+      "Ciput terbuat dari bahan kaos Rayon",
+      "Bahan Halus, Lembut, dan nyaman dipakai",
+      "Tidak sakit di telinga",
+      "Memiliki tali pengikat yang bisa diatur menyesuaikan lingkar kepala"
+    ]
   },
   {
-    id: 11,
-    name: "Floral Square Collection",
-    price: 290000,
+    id: "cycamelia-ciput-arab-tali-oat",
+    name: "Cycamelia Ciput Arab Tali Oat",
+    price: 18000,
     image: "/images/11.jpg",
-    description: "Koleksi hijab segi empat dengan motif floral eksklusif",
-    category: "square",
+    description: "Ciput terbuat dari bahan kaos Rayon yang halus, lembut, dan nyaman dipakai",
+    category: "ciput",
+    size: "All Size",
+    details: [
+      "Ciput terbuat dari bahan kaos Rayon",
+      "Bahan Halus, Lembut, dan nyaman dipakai",
+      "Tidak sakit di telinga",
+      "Memiliki tali pengikat yang bisa diatur menyesuaikan lingkar kepala"
+    ]
   },
   {
-    id: 12,
-    name: "Premium Instant Basic",
-    price: 295000,
+    id: "cycamelia-mist-series",
+    name: "Cycamelia Mist Series",
+    price: 20000,
     image: "/images/12.jpg",
-    description: "Hijab instan basic premium dengan berbagai pilihan warna",
-    category: "instant",
+    description: "Paris Premium dengan bahan yang lebih flowy, soft dan tegak saat dipakai",
+    category: "square",
+    size: "110 × 110cm",
+    details: [
+      "Material Paris Premium",
+      "Serat lebih padat dari paris jaman dulu",
+      "Bahan katun mudah diatur",
+      "Tegap di dahi, cocok banget buat daily karena bahannya PW dan gak bikin gerah",
+      "Bahan lebih flowy, soft dan tegak saat dipakai"
+    ]
   },
   {
-    id: 13,
-    name: "Signature Square Exclusive",
-    price: 420000,
+    id: "cycamelia-ciput-arab-tali-taupe",
+    name: "Cycamelia Ciput Arab Tali Taupe",
+    price: 18000,
     image: "/images/13.jpg",
-    description: "Hijab segi empat eksklusif dengan desain signature",
-    category: "square",
+    description: "Ciput terbuat dari bahan kaos Rayon yang halus, lembut, dan nyaman dipakai",
+    category: "ciput",
+    size: "All Size",
+    details: [
+      "Ciput terbuat dari bahan kaos Rayon",
+      "Bahan Halus, Lembut, dan nyaman dipakai",
+      "Tidak sakit di telinga",
+      "Memiliki tali pengikat yang bisa diatur menyesuaikan lingkar kepala"
+    ]
   },
   {
-    id: 14,
-    name: "Luxury Instant Max",
-    price: 480000,
+    id: "cycamelia-earthtone-series",
+    name: "Cycamelia Earthtone Series",
+    price: 20000,
     image: "/images/14.jpg",
-    description: "Hijab instan mewah dengan detail premium maksimal",
-    category: "instant",
+    description: "Paris Premium dengan bahan yang lebih flowy, soft dan tegak saat dipakai",
+    category: "square",
+    size: "110 × 110cm",
+    details: [
+      "Material Paris Premium",
+      "Serat lebih padat dari paris jaman dulu",
+      "Bahan katun mudah diatur",
+      "Tegap di dahi, cocok banget buat daily karena bahannya PW dan gak bikin gerah",
+      "Bahan lebih flowy, soft dan tegak saat dipakai"
+    ]
   },
   {
-    id: 15,
-    name: "Diamond Pashmina",
-    price: 650000,
+    id: "cycamelia-ciput-arab-tali-black-2",
+    name: "Cycamelia Ciput Arab Tali Black",
+    price: 18000,
     image: "/images/15.jpg",
-    description: "Pashmina premium kelas diamond dengan kualitas tertinggi",
-    category: "pashmina",
+    description: "Ciput terbuat dari bahan kaos Rayon yang halus, lembut, dan nyaman dipakai",
+    category: "ciput",
+    size: "All Size",
+    details: [
+      "Ciput terbuat dari bahan kaos Rayon",
+      "Bahan Halus, Lembut, dan nyaman dipakai",
+      "Tidak sakit di telinga",
+      "Memiliki tali pengikat yang bisa diatur menyesuaikan lingkar kepala"
+    ]
   },
   {
-    id: 16,
-    name: "Vintage Square Heritage",
-    price: 310000,
+    id: "cycamelia-bloom-series",
+    name: "Cycamelia Bloom Series",
+    price: 20000,
     image: "/images/16.jpg",
-    description: "Hijab segi empat dengan motif vintage yang elegan",
+    description: "Paris Premium dengan bahan yang lebih flowy, soft dan tegak saat dipakai",
     category: "square",
+    size: "110 × 110cm",
+    details: [
+      "Material Paris Premium",
+      "Serat lebih padat dari paris jaman dulu",
+      "Bahan katun mudah diatur",
+      "Tegap di dahi, cocok banget buat daily karena bahannya PW dan gak bikin gerah",
+      "Bahan lebih flowy, soft dan tegak saat dipakai"
+    ]
   },
   {
-    id: 17,
-    name: "Smart Instant Pro",
-    price: 360000,
+    id: "cycamelia-royale-series",
+    name: "Cycamelia Royale Series",
+    price: 20000,
     image: "/images/17.jpg",
-    description: "Hijab instan profesional dengan fitur smart design",
-    category: "instant",
+    description: "Paris Premium dengan bahan yang lebih flowy, soft dan tegak saat dipakai",
+    category: "square",
+    size: "110 × 110cm",
+    details: [
+      "Material Paris Premium",
+      "Serat lebih padat dari paris jaman dulu",
+      "Bahan katun mudah diatur",
+      "Tegap di dahi, cocok banget buat daily karena bahannya PW dan gak bikin gerah",
+      "Bahan lebih flowy, soft dan tegak saat dipakai"
+    ]
   },
   {
-    id: 18,
-    name: "Velvet Pashmina Royal",
-    price: 580000,
+    id: "cycamelia-ciput-arab-tali-navy",
+    name: "Cycamelia Ciput Arab Tali Navy",
+    price: 18000,
     image: "/images/18.jpg",
-    description: "Pashmina velvet dengan sentuhan royal yang mewah",
-    category: "pashmina",
+    description: "Ciput terbuat dari bahan kaos Rayon yang halus, lembut, dan nyaman dipakai",
+    category: "ciput",
+    size: "All Size",
+    details: [
+      "Ciput terbuat dari bahan kaos Rayon",
+      "Bahan Halus, Lembut, dan nyaman dipakai",
+      "Tidak sakit di telinga",
+      "Memiliki tali pengikat yang bisa diatur menyesuaikan lingkar kepala"
+    ]
   },
   {
-    id: 19,
-    name: "Geometric Square Modern",
-    price: 265000,
+    id: "cycamelia-delux-series",
+    name: "Cycamelia Delux Series",
+    price: 20000,
     image: "/images/19.jpg",
-    description: "Hijab segi empat dengan motif geometric modern",
+    description: "Paris Premium dengan bahan yang lebih flowy, soft dan tegak saat dipakai",
     category: "square",
+    size: "110 × 110cm",
+    details: [
+      "Material Paris Premium",
+      "Serat lebih padat dari paris jaman dulu",
+      "Bahan katun mudah diatur",
+      "Tegap di dahi, cocok banget buat daily karena bahannya PW dan gak bikin gerah",
+      "Bahan lebih flowy, soft dan tegak saat dipakai"
+    ]
   },
   {
-    id: 20,
-    name: "Instant Elegant Plus",
-    price: 410000,
+    id: "cycamelia-ciput-arab-tali-milo",
+    name: "Cycamelia Ciput Arab Tali Milo",
+    price: 18000,
     image: "/images/20.jpg",
-    description: "Hijab instan elegan dengan tambahan fitur premium",
-    category: "instant",
+    description: "Ciput terbuat dari bahan kaos Rayon yang halus, lembut, dan nyaman dipakai",
+    category: "ciput",
+    size: "All Size",
+    details: [
+      "Ciput terbuat dari bahan kaos Rayon",
+      "Bahan Halus, Lembut, dan nyaman dipakai",
+      "Tidak sakit di telinga",
+      "Memiliki tali pengikat yang bisa diatur menyesuaikan lingkar kepala"
+    ]
   },
   {
-    id: 21,
-    name: "Bamboo Pashmina Eco",
-    price: 520000,
+    id: "cycamelia-ciput-arab-tali-nude",
+    name: "Cycamelia Ciput Arab Tali Nude",
+    price: 18000,
     image: "/images/21.jpg",
-    description: "Pashmina eco-friendly dari material bamboo premium",
-    category: "pashmina",
+    description: "Ciput terbuat dari bahan kaos Rayon yang halus, lembut, dan nyaman dipakai",
+    category: "ciput",
+    size: "All Size",
+    details: [
+      "Ciput terbuat dari bahan kaos Rayon",
+      "Bahan Halus, Lembut, dan nyaman dipakai",
+      "Tidak sakit di telinga",
+      "Memiliki tali pengikat yang bisa diatur menyesuaikan lingkar kepala"
+    ]
   },
   {
-    id: 22,
-    name: "Artisan Square Limited",
-    price: 750000,
+    id: "cycamelia-ciput-arab-tali-abu-abu",
+    name: "Cycamelia Ciput Arab Tali Abu-abu",
+    price: 18000,
     image: "/images/22.jpg",
-    description: "Hijab segi empat limited edition dengan sentuhan artisan",
-    category: "square",
-  },
+    description: "Ciput terbuat dari bahan kaos Rayon yang halus, lembut, dan nyaman dipakai",
+    category: "ciput",
+    size: "All Size",
+    details: [
+      "Ciput terbuat dari bahan kaos Rayon",
+      "Bahan Halus, Lembut, dan nyaman dipakai",
+      "Tidak sakit di telinga",
+      "Memiliki tali pengikat yang bisa diatur menyesuaikan lingkar kepala"
+    ]
+  }
 ];
 
 export default function Katalog() {
@@ -257,6 +422,7 @@ export default function Katalog() {
                   <SelectItem value="square">Segi Empat</SelectItem>
                   <SelectItem value="instant">Instant</SelectItem>
                   <SelectItem value="pashmina">Pashmina</SelectItem>
+                  <SelectItem value="ciput">Ciput Arab</SelectItem>
                 </SelectContent>
               </Select>
 

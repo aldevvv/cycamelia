@@ -28,7 +28,7 @@ export default function ProductCard({ id, name, price, image, description }: Pro
   };
 
   return (
-    <Card className="group overflow-hidden border-0 shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 card-hover animate-fade-in">
+    <Card className="group overflow-hidden border-0 shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 card-hover animate-fade-in h-full flex flex-col">
       <div className="relative overflow-hidden">
         <div className="aspect-square relative">
           <Image
@@ -42,7 +42,7 @@ export default function ProductCard({ id, name, price, image, description }: Pro
         
         {/* Quick Actions */}
         <div className="absolute top-4 right-4 flex flex-col space-y-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          <button 
+          <button
             className="bg-white/90 backdrop-blur-sm hover:bg-white text-gray-800 p-2 rounded-full shadow-md transition-colors duration-200"
             aria-label="Add to wishlist"
           >
@@ -60,31 +60,26 @@ export default function ProductCard({ id, name, price, image, description }: Pro
         )}
       </div>
 
-      <CardContent className="p-5 flex flex-col h-full">
-        <div className="space-y-3 flex-grow">
+      <CardContent className="p-5 flex flex-col flex-grow">
+        <div className="space-y-3 flex-grow flex flex-col">
           <h3 className="font-semibold text-gray-900 text-lg leading-tight line-clamp-2">
             {name}
           </h3>
           
           {description && (
-            <p className="text-gray-600 text-sm line-clamp-2">
+            <p className="text-gray-600 text-sm line-clamp-2 flex-grow">
               {description}
             </p>
           )}
 
-          <div className="flex items-center justify-between">
-            <div className="space-y-1">
-              <div className="text-2xl font-bold text-red-700">
-                {formatPrice(price)}
-              </div>
-              <div className="text-xs text-gray-500">
-                Harga spesial
-              </div>
+          <div className="flex items-center justify-between mt-auto">
+            <div className="text-2xl font-bold text-red-700">
+              {formatPrice(price)}
             </div>
           </div>
         </div>
         
-        <div className="mt-auto">
+        <div className="mt-4">
           <Button
             className="w-full bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white transition-all duration-200 group/btn premium-btn focus-modern"
             onClick={handleBuyNow}

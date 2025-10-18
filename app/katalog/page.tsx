@@ -480,7 +480,7 @@ export default function Katalog() {
               : "space-y-4"
             }>
               {sortedProducts.map((product, index) => (
-                <div key={product.id} className="h-full" style={{animationDelay: `${index * 0.1}s`}}>
+                <div key={product.id} className="h-full flex flex-col" style={{animationDelay: `${index * 0.1}s`}}>
                   <ProductCard
                     id={product.id}
                     name={product.name}

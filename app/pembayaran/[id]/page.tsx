@@ -454,8 +454,8 @@ export default function SingleProductPembayaran({ params }: PembayaranPageProps)
                 <CardTitle>Detail Produk</CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="flex items-center space-x-6 p-4 border rounded-lg">
-                  <div className="w-32 h-32 relative rounded-lg overflow-hidden flex-shrink-0">
+                <div className="flex flex-col sm:flex-row items-start sm:items-center space-y-4 sm:space-y-0 sm:space-x-6 p-4 border rounded-lg">
+                  <div className="w-32 h-32 relative rounded-lg overflow-hidden flex-shrink-0 mx-auto sm:mx-0">
                     <Image
                       src={product.image}
                       alt={product.name}
@@ -464,17 +464,17 @@ export default function SingleProductPembayaran({ params }: PembayaranPageProps)
                     />
                   </div>
                   
-                  <div className="flex-1">
+                  <div className="flex-1 w-full text-center sm:text-left">
                     <h3 className="font-semibold text-lg text-gray-900">{product.name}</h3>
                     <p className="text-gray-600 text-sm mt-1">{product.description}</p>
-                    <div className="flex items-center space-x-4 mt-2">
+                    <div className="flex flex-col sm:flex-row sm:items-center space-y-2 sm:space-y-0 sm:space-x-4 mt-2">
                       <p className="text-red-600 font-semibold text-lg">{formatPrice(product.price)}</p>
-                      <span className="text-sm text-gray-500 bg-gray-100 px-2 py-1 rounded">{product.size}</span>
+                      <span className="text-sm text-gray-500 bg-gray-100 px-2 py-1 rounded inline-block w-fit mx-auto sm:mx-0">{product.size}</span>
                     </div>
                     
-                    <div className="flex items-center space-x-2 mt-4">
+                    <div className="flex flex-col sm:flex-row sm:items-center space-y-2 sm:space-y-0 sm:space-x-2 mt-4">
                       <span className="text-sm text-gray-700">Jumlah:</span>
-                      <div className="flex items-center space-x-2">
+                      <div className="flex items-center space-x-2 mx-auto sm:mx-0">
                         <Button
                           variant="outline"
                           size="icon"

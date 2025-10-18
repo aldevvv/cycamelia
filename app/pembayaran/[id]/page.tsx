@@ -10,11 +10,10 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { Input } from "@/components/ui/input";
-import { useCart } from "@/lib/use-cart";
-import { 
-  Minus, 
-  Plus, 
-  ArrowLeft, 
+import {
+  Minus,
+  Plus,
+  ArrowLeft,
   ShoppingBag,
   MessageCircle
 } from "lucide-react";
@@ -370,7 +369,6 @@ interface PembayaranPageProps {
 
 export default function SingleProductPembayaran({ params }: PembayaranPageProps) {
   const router = useRouter();
-  const { addToCart } = useCart();
   const [quantity, setQuantity] = useState(1);
   const [productId, setProductId] = useState<string | null>(null);
   

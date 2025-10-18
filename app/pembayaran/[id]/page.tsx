@@ -452,7 +452,7 @@ export default function SingleProductPembayaran({ params }: PembayaranPageProps)
                 <CardTitle>Detail Produk</CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="flex flex-col sm:flex-row items-start sm:items-center space-y-4 sm:space-y-0 sm:space-x-6 p-4 border rounded-lg">
+                <div className="flex flex-col sm:flex-row items-start space-y-4 sm:space-y-0 sm:space-x-6 p-4 border rounded-lg">
                   <div className="w-32 h-32 relative rounded-lg overflow-hidden flex-shrink-0 mx-auto sm:mx-0">
                     <Image
                       src={product.image}
@@ -462,7 +462,7 @@ export default function SingleProductPembayaran({ params }: PembayaranPageProps)
                     />
                   </div>
                   
-                  <div className="flex-1 w-full text-center sm:text-left">
+                  <div className="flex-1 w-full text-center sm:text-left sm:mt-0">
                     <h3 className="font-semibold text-lg text-gray-900">{product.name}</h3>
                     <p className="text-gray-600 text-sm mt-1">{product.description}</p>
                     <div className="flex flex-col sm:flex-row sm:items-center space-y-2 sm:space-y-0 sm:space-x-4 mt-2">
@@ -503,7 +503,6 @@ export default function SingleProductPembayaran({ params }: PembayaranPageProps)
                 
                 {/* Product Details */}
                 <div className="mt-6 p-4 bg-gray-50 rounded-lg">
-                  <h4 className="font-semibold text-gray-900 mb-3">Detail Produk</h4>
                   <ul className="space-y-2">
                     {product.details.map((detail, index) => (
                       <li key={index} className="flex items-start">

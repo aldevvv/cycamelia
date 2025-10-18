@@ -4,7 +4,7 @@ import { ArrowRight, Sparkles } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section className="relative bg-gradient-to-br from-amber-50 via-white to-amber-50 overflow-hidden">
+    <section className="relative bg-gradient-to-br from-red-50 via-white to-red-50 overflow-hidden animate-fade-in">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0" style={{
@@ -17,13 +17,13 @@ export default function Hero() {
           {/* Text Content */}
           <div className="space-y-8">
             <div className="space-y-4">
-              <div className="inline-flex items-center space-x-2 bg-amber-100 text-amber-800 px-4 py-2 rounded-full text-sm font-medium">
+              <div className="inline-flex items-center space-x-2 bg-red-100 text-red-800 px-4 py-2 rounded-full text-sm font-medium animate-scale-in">
                 <Sparkles className="h-4 w-4" />
                 <span>Koleksi Premium Terbaru</span>
               </div>
               <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 leading-tight">
                 Kemewahan dalam Setiap
-                <span className="block bg-gradient-to-r from-amber-600 to-amber-800 bg-clip-text text-transparent">
+                <span className="block bg-gradient-to-r from-red-600 to-red-800 bg-clip-text text-transparent">
                   Helaian Hijab
                 </span>
               </h1>
@@ -36,7 +36,7 @@ export default function Hero() {
             <div className="flex flex-col sm:flex-row gap-4">
               <Button 
                 size="lg" 
-                className="bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-700 hover:to-amber-800 text-white px-8 py-6 text-lg"
+                className="bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white px-8 py-6 text-lg premium-btn"
                 asChild
               >
                 <Link href="/katalog">
@@ -47,7 +47,7 @@ export default function Hero() {
               <Button 
                 variant="outline" 
                 size="lg" 
-                className="border-amber-600 text-amber-600 hover:bg-amber-50 px-8 py-6 text-lg"
+                className="border-red-600 text-red-600 hover:bg-red-50 px-8 py-6 text-lg"
                 asChild
               >
                 <Link href="/kontak">
@@ -59,15 +59,15 @@ export default function Hero() {
             {/* Features */}
             <div className="grid grid-cols-3 gap-6 pt-8">
               <div className="text-center">
-                <div className="text-3xl font-bold text-amber-600">100+</div>
+                <div className="text-3xl font-bold text-red-600">100+</div>
                 <div className="text-sm text-gray-600">Desain Eksklusif</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-amber-600">Premium</div>
+                <div className="text-3xl font-bold text-red-600">Premium</div>
                 <div className="text-sm text-gray-600">Material Berkualitas</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-amber-600">24/7</div>
+                <div className="text-3xl font-bold text-red-600">24/7</div>
                 <div className="text-sm text-gray-600">Customer Service</div>
               </div>
             </div>
@@ -87,8 +87,8 @@ export default function Hero() {
             {/* Floating Cards */}
             <div className="absolute -top-4 -right-4 bg-white rounded-xl shadow-lg p-4 z-20">
               <div className="flex items-center space-x-3">
-                <div className="w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center">
-                  <Sparkles className="h-6 w-6 text-amber-600" />
+                <div className="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center">
+                  <Sparkles className="h-6 w-6 text-red-600" />
                 </div>
                 <div>
                   <div className="font-semibold text-gray-900">Premium Quality</div>

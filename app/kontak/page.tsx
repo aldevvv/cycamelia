@@ -20,7 +20,7 @@ import {
 export default function Kontak() {
   const handleWhatsAppContact = () => {
     const message = "Halo, saya ingin bertanya tentang produk Cycamelia.";
-    const whatsappUrl = `https://wa.me/6281234567890?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/6289653757921?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, "_blank");
   };
 
@@ -32,7 +32,7 @@ export default function Kontak() {
     const message = formData.get("message") as string;
     
     const whatsappMessage = `Halo, saya ${name} (${email}). ${message}`;
-    const whatsappUrl = `https://wa.me/6281234567890?text=${encodeURIComponent(whatsappMessage)}`;
+    const whatsappUrl = `https://wa.me/6289653757921?text=${encodeURIComponent(whatsappMessage)}`;
     window.open(whatsappUrl, "_blank");
   };
 
@@ -41,11 +41,11 @@ export default function Kontak() {
       <Navbar />
       
       {/* Header */}
-      <div className="bg-gradient-to-r from-amber-600 to-amber-700 text-white py-12">
+      <div className="bg-gradient-to-r from-red-600 to-red-700 text-white py-12 animate-fade-in">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-4">
             <h1 className="text-4xl font-bold">Hubungi Kami</h1>
-            <p className="text-lg text-amber-100 max-w-2xl mx-auto">
+            <p className="text-lg text-amber-50 max-w-2xl mx-auto">
               Kami siap membantu Anda menemukan hijab sempurna untuk setiap occasion
             </p>
           </div>
@@ -67,18 +67,18 @@ export default function Kontak() {
 
             <div className="space-y-6">
               {/* WhatsApp */}
-              <Card className="border-l-4 border-l-green-500">
+              <Card className="border-l-4 border-l-red-500">
                 <CardContent className="p-6">
                   <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
-                      <MessageCircle className="h-6 w-6 text-green-600" />
+                    <div className="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0">
+                      <MessageCircle className="h-6 w-6 text-red-600" />
                     </div>
                     <div className="flex-1">
                       <h3 className="font-semibold text-gray-900 text-lg">WhatsApp</h3>
                       <p className="text-gray-600 mt-1">Respon tercepat untuk pertanyaan dan pemesanan</p>
                       <div className="mt-3">
-                        <Button 
-                          className="bg-green-600 hover:bg-green-700 text-white"
+                        <Button
+                          className="bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white"
                           onClick={handleWhatsAppContact}
                         >
                           <MessageCircle className="h-4 w-4 mr-2" />
@@ -95,11 +95,11 @@ export default function Kontak() {
                 <CardContent className="p-6">
                   <div className="flex items-start space-x-4">
                     <div className="w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center flex-shrink-0">
-                      <Phone className="h-6 w-6 text-amber-600" />
+                      <Phone className="h-6 w-6 text-red-600" />
                     </div>
                     <div>
                       <h3 className="font-semibold text-gray-900 text-lg">Telepon</h3>
-                      <p className="text-gray-600 mt-1">+62 812-3456-7890</p>
+                      <p className="text-gray-600 mt-1">089653757921</p>
                       <p className="text-sm text-gray-500 mt-1">Senin - Sabtu, 09:00 - 18:00 WIB</p>
                     </div>
                   </div>
@@ -111,11 +111,11 @@ export default function Kontak() {
                 <CardContent className="p-6">
                   <div className="flex items-start space-x-4">
                     <div className="w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center flex-shrink-0">
-                      <Mail className="h-6 w-6 text-amber-600" />
+                      <Mail className="h-6 w-6 text-red-600" />
                     </div>
                     <div>
                       <h3 className="font-semibold text-gray-900 text-lg">Email</h3>
-                      <p className="text-gray-600 mt-1">info@cycamelia.com</p>
+                      <p className="text-gray-600 mt-1">support@cycamelia.my.id</p>
                       <p className="text-sm text-gray-500 mt-1">Respon dalam 24 jam</p>
                     </div>
                   </div>
@@ -127,13 +127,13 @@ export default function Kontak() {
                 <CardContent className="p-6">
                   <div className="flex items-start space-x-4">
                     <div className="w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center flex-shrink-0">
-                      <MapPin className="h-6 w-6 text-amber-600" />
+                      <MapPin className="h-6 w-6 text-red-600" />
                     </div>
                     <div>
                       <h3 className="font-semibold text-gray-900 text-lg">Alamat</h3>
                       <p className="text-gray-600 mt-1">
-                        Jl. Premium Hijab No. 123<br />
-                        Jakarta Selatan, DKI Jakarta 12345<br />
+                        Jl. A.P Pettarani<br />
+                        Kota Makassar 90222<br />
                         Indonesia
                       </p>
                     </div>
@@ -146,21 +146,13 @@ export default function Kontak() {
             <div className="space-y-4">
               <h3 className="font-semibold text-gray-900 text-lg">Ikuti Kami</h3>
               <div className="flex space-x-4">
-                <a 
-                  href="https://instagram.com/cycamelia.id" 
-                  target="_blank" 
+                <a
+                  href="https://instagram.com/cycamelia.id"
+                  target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white p-3 rounded-full transition-colors duration-200"
+                  className="bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white p-3 rounded-full transition-all duration-300 transform hover:scale-110"
                 >
                   <Instagram className="h-5 w-5" />
-                </a>
-                <a 
-                  href="https://facebook.com/cycamelia" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full transition-colors duration-200"
-                >
-                  <Facebook className="h-5 w-5" />
                 </a>
               </div>
             </div>
@@ -231,7 +223,7 @@ export default function Kontak() {
 
                   <Button 
                     type="submit" 
-                    className="w-full bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-700 hover:to-amber-800 text-white"
+                    className="w-full bg-gradient-to-r from-red-600 to-red-700 hover:from-amber-400 hover:to-amber-500 text-white"
                   >
                     <Send className="h-4 w-4 mr-2" />
                     Kirim via WhatsApp
@@ -249,7 +241,7 @@ export default function Kontak() {
               <CardContent className="p-6">
                 <div className="flex items-start space-x-4">
                   <div className="w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center flex-shrink-0">
-                    <Clock className="h-6 w-6 text-amber-600" />
+                    <Clock className="h-6 w-6 text-red-600" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-900 text-lg mb-3">Jam Operasional</h3>

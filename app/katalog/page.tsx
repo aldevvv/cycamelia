@@ -220,11 +220,11 @@ export default function Katalog() {
       <Navbar />
       
       {/* Header */}
-      <div className="bg-gradient-to-r from-amber-600 to-amber-700 text-white py-12">
+      <div className="bg-gradient-to-r from-red-600 to-red-700 text-white py-12 animate-fade-in">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-4">
             <h1 className="text-4xl font-bold">Katalog Produk</h1>
-            <p className="text-lg text-amber-100 max-w-2xl mx-auto">
+            <p className="text-lg text-amber-50 max-w-2xl mx-auto">
               Temukan koleksi hijab premium kami dengan berbagai pilihan desain eksklusif
             </p>
           </div>
@@ -232,22 +232,22 @@ export default function Katalog() {
       </div>
 
       {/* Filters and Search */}
-      <div className="bg-white border-b sticky top-16 z-40">
+      <div className="bg-white border-b animate-slide-in-left">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-4">
-          <div className="flex flex-col lg:flex-row gap-4 items-center justify-between">
-            {/* Search */}
-            <div className="relative flex-1 max-w-md">
+          <div className="flex flex-col lg:flex-row gap-4 items-center">
+            {/* Search - Full Width on mobile, flex-1 on desktop */}
+            <div className="relative w-full lg:flex-1">
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" />
               <Input
                 placeholder="Cari produk..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="pl-10"
+                className="pl-10 w-full"
               />
             </div>
 
             {/* Filters */}
-            <div className="flex flex-wrap gap-3 items-center">
+            <div className="flex flex-wrap gap-3 items-center flex-shrink-0">
               <Select value={selectedCategory} onValueChange={setSelectedCategory}>
                 <SelectTrigger className="w-40">
                   <SelectValue placeholder="Kategori" />
@@ -309,19 +309,20 @@ export default function Katalog() {
               </p>
             </div>
 
-            <div className={viewMode === "grid" 
-              ? "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" 
+            <div className={viewMode === "grid"
+              ? "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
               : "space-y-4"
             }>
-              {sortedProducts.map((product) => (
-                <ProductCard
-                  key={product.id}
-                  id={product.id}
-                  name={product.name}
-                  price={product.price}
-                  image={product.image}
-                  description={product.description}
-                />
+              {sortedProducts.map((product, index) => (
+                <div key={product.id} className="h-full" style={{animationDelay: `${index * 0.1}s`}}>
+                  <ProductCard
+                    id={product.id}
+                    name={product.name}
+                    price={product.price}
+                    image={product.image}
+                    description={product.description}
+                  />
+                </div>
               ))}
             </div>
           </>

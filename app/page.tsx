@@ -6,7 +6,7 @@ import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import Hero from "@/components/hero";
 import ProductCard from "@/components/product-card";
-import { ArrowRight, Star, Shield, Truck, RefreshCw } from "lucide-react";
+import { ArrowRight, Star, Shield, Truck, RefreshCw, Heart, Sparkles, Crown } from "lucide-react";
 
 // Sample product data - 22 products sesuai dengan gambar yang ada
 const allProducts = [
@@ -188,8 +188,8 @@ const allProducts = [
   },
 ];
 
-// Featured products (first 4 products)
-const featuredProducts = allProducts.slice(0, 4);
+// Featured products (first 8 products for better display)
+const featuredProducts = allProducts.slice(0, 8);
 
 export default function Home() {
   return (
@@ -199,47 +199,65 @@ export default function Home() {
       {/* Hero Section */}
       <Hero />
 
-      {/* Features Section */}
-      <section className="py-16 bg-white">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div className="text-center space-y-3">
-              <div className="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mx-auto">
-                <Shield className="h-8 w-8 text-amber-600" />
-              </div>
-              <h3 className="font-semibold text-gray-900">Premium Quality</h3>
-              <p className="text-sm text-gray-600">Material berkualitas tinggi dengan standar premium</p>
+      {/* Premium Features Section */}
+      <section className="py-20 bg-gradient-to-br from-red-50 via-white to-red-50 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-30 bg-red-50"></div>
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-16 animate-fade-in">
+            <div className="inline-flex items-center gap-2 bg-red-100 text-red-700 px-4 py-2 rounded-full text-sm font-medium mb-4">
+              <Crown className="w-4 h-4" />
+              <span>Keunggulan Premium</span>
             </div>
-            <div className="text-center space-y-3">
-              <div className="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mx-auto">
-                <Truck className="h-8 w-8 text-amber-600" />
+            <h2 className="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-red-700 to-red-900 bg-clip-text text-transparent mb-4">
+              Mengapa Memilih Cycamelia
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Pengalaman berhijab premium dengan kualitas terbaik dan pelayanan istimewa
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="group text-center space-y-4 p-6 rounded-2xl bg-white shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 animate-slide-up" style={{ animationDelay: '0.1s' }}>
+              <div className="w-20 h-20 bg-gradient-to-br from-red-100 to-red-200 rounded-2xl flex items-center justify-center mx-auto group-hover:scale-110 transition-transform duration-300">
+                <Shield className="h-10 w-10 text-red-600" />
               </div>
-              <h3 className="font-semibold text-gray-900">Free Shipping</h3>
-              <p className="text-sm text-gray-600">Pengiriman gratis untuk pembelian minimal Rp 500.000</p>
+              <h3 className="font-bold text-xl text-gray-900">Premium Quality</h3>
+              <p className="text-gray-600 leading-relaxed">Material berkualitas tinggi dengan standar premium yang terjamin</p>
             </div>
-            <div className="text-center space-y-3">
-              <div className="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mx-auto">
-                <RefreshCw className="h-8 w-8 text-amber-600" />
+            <div className="group text-center space-y-4 p-6 rounded-2xl bg-white shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 animate-slide-up" style={{ animationDelay: '0.2s' }}>
+              <div className="w-20 h-20 bg-gradient-to-br from-red-100 to-red-200 rounded-2xl flex items-center justify-center mx-auto group-hover:scale-110 transition-transform duration-300">
+                <Truck className="h-10 w-10 text-red-600" />
               </div>
-              <h3 className="font-semibold text-gray-900">Easy Return</h3>
-              <p className="text-sm text-gray-600">Pengembalian mudah dalam 7 hari</p>
+              <h3 className="font-bold text-xl text-gray-900">Free Shipping</h3>
+              <p className="text-gray-600 leading-relaxed">Pengiriman gratis untuk pembelian minimal Rp 500.000</p>
             </div>
-            <div className="text-center space-y-3">
-              <div className="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mx-auto">
-                <Star className="h-8 w-8 text-amber-600" />
+            <div className="group text-center space-y-4 p-6 rounded-2xl bg-white shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 animate-slide-up" style={{ animationDelay: '0.3s' }}>
+              <div className="w-20 h-20 bg-gradient-to-br from-red-100 to-red-200 rounded-2xl flex items-center justify-center mx-auto group-hover:scale-110 transition-transform duration-300">
+                <RefreshCw className="h-10 w-10 text-red-600" />
               </div>
-              <h3 className="font-semibold text-gray-900">Exclusive Design</h3>
-              <p className="text-sm text-gray-600">Desain eksklusif yang tidak ada di tempat lain</p>
+              <h3 className="font-bold text-xl text-gray-900">Easy Return</h3>
+              <p className="text-gray-600 leading-relaxed">Pengembalian mudah dalam 7 hari tanpa syarat rumit</p>
+            </div>
+            <div className="group text-center space-y-4 p-6 rounded-2xl bg-white shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 animate-slide-up" style={{ animationDelay: '0.4s' }}>
+              <div className="w-20 h-20 bg-gradient-to-br from-red-100 to-red-200 rounded-2xl flex items-center justify-center mx-auto group-hover:scale-110 transition-transform duration-300">
+                <Sparkles className="h-10 w-10 text-red-600" />
+              </div>
+              <h3 className="font-bold text-xl text-gray-900">Exclusive Design</h3>
+              <p className="text-gray-600 leading-relaxed">Desain eksklusif yang tidak ada di tempat lain</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Featured Products */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-20 bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center space-y-4 mb-12">
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900">
+          <div className="text-center space-y-6 mb-16 animate-fade-in">
+            <div className="inline-flex items-center gap-2 bg-red-100 text-red-700 px-4 py-2 rounded-full text-sm font-medium">
+              <Heart className="w-4 h-4" />
+              <span>Koleksi Terfavorit</span>
+            </div>
+            <h2 className="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-red-700 to-red-900 bg-clip-text text-transparent">
               Koleksi Unggulan
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
@@ -248,28 +266,28 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {featuredProducts.map((product) => (
-              <ProductCard
-                key={product.id}
-                id={product.id}
-                name={product.name}
-                price={product.price}
-                image={product.image}
-                description={product.description}
-              />
+            {featuredProducts.map((product, index) => (
+              <div key={product.id} className="animate-scale-in" style={{ animationDelay: `${index * 0.1}s` }}>
+                <ProductCard
+                  id={product.id}
+                  name={product.name}
+                  price={product.price}
+                  image={product.image}
+                  description={product.description}
+                />
+              </div>
             ))}
           </div>
 
-          <div className="text-center mt-12">
+          <div className="text-center mt-16 animate-fade-in">
             <Button 
-              variant="outline" 
               size="lg" 
-              className="border-amber-600 text-amber-600 hover:bg-amber-50 px-8 py-6"
+              className="bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white px-8 py-6 text-lg font-medium shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group"
               asChild
             >
               <Link href="/katalog">
                 Lihat Semua Koleksi
-                <ArrowRight className="ml-2 h-5 w-5" />
+                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Link>
             </Button>
           </div>
@@ -277,14 +295,19 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section className="py-16 bg-white">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6">
-              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900">
-                Tentang Cycamelia
+      <section className="py-20 bg-gradient-to-br from-red-50 via-white to-red-50 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-30 bg-red-50"></div>
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div className="space-y-8 animate-slide-in-left">
+              <div className="inline-flex items-center gap-2 bg-red-100 text-red-700 px-4 py-2 rounded-full text-sm font-medium w-fit">
+                <Crown className="w-4 h-4" />
+                <span>Tentang Kami</span>
+              </div>
+              <h2 className="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-red-700 to-red-900 bg-clip-text text-transparent">
+                Cycamelia: Elegansi dalam Setiap Lembaran
               </h2>
-              <div className="space-y-4 text-gray-600">
+              <div className="space-y-6 text-gray-600 text-lg leading-relaxed">
                 <p>
                   Cycamelia adalah brand hijab premium yang didedikasikan untuk menyediakan koleksi 
                   hijab berkualitas tinggi dengan desain eksklusif. Kami percaya bahwa setiap wanita 
@@ -298,56 +321,54 @@ export default function Home() {
                 </p>
               </div>
               <Button 
-                className="bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-700 hover:to-amber-800 text-white"
+                size="lg"
+                className="bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white px-8 py-6 text-lg font-medium shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group"
                 asChild
               >
                 <Link href="/katalog">
                   Jelajahi Koleksi Kami
+                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </Button>
             </div>
-            <div className="relative rounded-2xl overflow-hidden shadow-xl">
+            <div className="relative rounded-3xl overflow-hidden shadow-2xl animate-slide-in-right group">
+              <div className="absolute inset-0 bg-gradient-to-br from-red-600/20 to-red-800/20 z-10"></div>
               <Image
                 src="/images/5.jpg"
                 alt="Cycamelia Story"
                 width={600}
                 height={400}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
             </div>
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-r from-amber-600 to-amber-700">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
-          <div className="space-y-6">
-            <h2 className="text-3xl lg:text-4xl font-bold text-white">
+      <section className="py-20 bg-gradient-to-br from-red-600 via-red-700 to-red-800 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-20 bg-red-900"></div>
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center relative z-10">
+          <div className="space-y-8 animate-fade-in">
+            <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-medium">
+              <Sparkles className="w-4 h-4" />
+              <span>Konsultasi Gratis</span>
+            </div>
+            <h2 className="text-4xl lg:text-5xl font-bold text-white">
               Temukan Hijab Sempurna untuk Anda
             </h2>
-            <p className="text-lg text-amber-100">
+            <p className="text-xl text-red-100 max-w-3xl mx-auto leading-relaxed">
               Konsultasi gratis dengan tim kami untuk menemukan koleksi yang sesuai dengan gaya dan kebutuhan Anda
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
-                size="lg" 
-                className="bg-white text-amber-700 hover:bg-amber-50 px-8 py-6"
+            <div className="flex justify-center pt-4">
+              <Button
+                size="lg"
+                className="bg-white text-red-700 hover:bg-red-50 px-8 py-6 text-lg font-medium shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 group"
                 asChild
               >
                 <Link href="/kontak">
                   Konsultasi Gratis
-                </Link>
-              </Button>
-              <Button 
-                variant="outline" 
-                size="lg" 
-                className="border-white text-white hover:bg-white hover:text-amber-700 px-8 py-6"
-                asChild
-              >
-                <Link href="https://wa.me/6281234567890" target="_blank">
-                  Hubungi WhatsApp
+                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </Button>
             </div>

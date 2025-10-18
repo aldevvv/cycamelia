@@ -57,8 +57,8 @@ export default function Keranjang() {
             <p className="text-gray-600 max-w-md mx-auto">
               Belum ada produk di keranjang Anda. Mulai belanja sekarang!
             </p>
-            <Button 
-              className="bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-700 hover:to-amber-800 text-white"
+            <Button
+              className="bg-gradient-to-r from-amber-300 to-amber-400 hover:from-amber-400 hover:to-amber-500 text-white"
               asChild
             >
               <Link href="/katalog">
@@ -79,7 +79,7 @@ export default function Keranjang() {
       <Navbar />
       
       {/* Header */}
-      <div className="bg-gradient-to-r from-amber-600 to-amber-700 text-white py-8">
+      <div className="bg-gradient-to-r from-amber-300 to-amber-400 text-white py-8">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex items-center space-x-4">
             <Link href="/katalog" className="text-white/80 hover:text-white transition-colors">
@@ -196,8 +196,8 @@ export default function Keranjang() {
                 </div>
                 
                 <div className="space-y-2 pt-4">
-                  <Button 
-                    className="w-full bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-700 hover:to-amber-800 text-white"
+                  <Button
+                    className="w-full bg-gradient-to-r from-amber-300 to-amber-400 hover:from-amber-400 hover:to-amber-500 text-white"
                     asChild
                   >
                     <Link href="/pembayaran">

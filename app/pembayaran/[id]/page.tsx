@@ -207,12 +207,6 @@ export default function SingleProductPembayaran({ params }: PembayaranPageProps)
   const router = useRouter();
   const { addToCart } = useCart();
   const [quantity, setQuantity] = useState(1);
-  const [customerInfo, setCustomerInfo] = useState({
-    name: "",
-    phone: "",
-    address: "",
-    notes: ""
-  });
   const [productId, setProductId] = useState<number | null>(null);
   
   useEffect(() => {
@@ -247,17 +241,12 @@ export default function SingleProductPembayaran({ params }: PembayaranPageProps)
 
   const handleWhatsAppCheckout = () => {
     const message = `*ORDER BARU - CYCAMELIA*\n\n` +
-      `*Data Pelanggan:*\n` +
-      `Nama: ${customerInfo.name || 'Tidak diisi'}\n` +
-      `No. HP: ${customerInfo.phone || 'Tidak diisi'}\n` +
-      `Alamat: ${customerInfo.address || 'Tidak diisi'}\n\n` +
       `*Pesanan:*\n` +
       `${product?.name} (x${quantity}) - ${formatPrice((product?.price || 0) * quantity)}\n\n` +
-      `*Total: ${formatPrice((product?.price || 0) * quantity + 15000)}* (termasuk ongkir)\n\n` +
-      `Catatan: ${customerInfo.notes || 'Tidak ada'}\n\n` +
+      `*Total: ${formatPrice(totalWithShipping)}* (termasuk ongkir)\n\n` +
       `Mohon konfirmasi ketersediaan dan total pembayaran.`;
     
-    const whatsappUrl = `https://wa.me/6281234567890?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/6289653757921?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, "_blank");
   };
 
@@ -280,7 +269,7 @@ export default function SingleProductPembayaran({ params }: PembayaranPageProps)
       <Navbar />
       
       {/* Header */}
-      <div className="bg-gradient-to-r from-amber-600 to-amber-700 text-white py-8">
+      <div className="bg-gradient-to-r from-red-600 to-red-700 text-white py-8 animate-fade-in">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex items-center space-x-4">
             <Link href="/katalog" className="text-white/80 hover:text-white transition-colors">
@@ -313,7 +302,7 @@ export default function SingleProductPembayaran({ params }: PembayaranPageProps)
                   <div className="flex-1">
                     <h3 className="font-semibold text-lg text-gray-900">{product.name}</h3>
                     <p className="text-gray-600 text-sm mt-1">{product.description}</p>
-                    <p className="text-amber-600 font-semibold text-lg mt-2">{formatPrice(product.price)}</p>
+                    <p className="text-red-600 font-semibold text-lg mt-2">{formatPrice(product.price)}</p>
                     
                     <div className="flex items-center space-x-2 mt-4">
                       <span className="text-sm text-gray-700">Jumlah:</span>
@@ -348,64 +337,6 @@ export default function SingleProductPembayaran({ params }: PembayaranPageProps)
               </CardContent>
             </Card>
 
-            {/* Customer Information */}
-            <Card>
-              <CardHeader>
-                <CardTitle>Informasi Pelanggan</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">
-                    Nama Lengkap *
-                  </label>
-                  <Input
-                    placeholder="Masukkan nama Anda"
-                    value={customerInfo.name}
-                    onChange={(e) => setCustomerInfo({...customerInfo, name: e.target.value})}
-                    required
-                  />
-                </div>
-                
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">
-                    Nomor WhatsApp *
-                  </label>
-                  <Input
-                    placeholder="08xx-xxxx-xxxx"
-                    value={customerInfo.phone}
-                    onChange={(e) => setCustomerInfo({...customerInfo, phone: e.target.value})}
-                    required
-                  />
-                </div>
-                
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">
-                    Alamat Pengiriman *
-                  </label>
-                  <textarea
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent"
-                    rows={3}
-                    placeholder="Masukkan alamat lengkap"
-                    value={customerInfo.address}
-                    onChange={(e) => setCustomerInfo({...customerInfo, address: e.target.value})}
-                    required
-                  ></textarea>
-                </div>
-                
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">
-                    Catatan (opsional)
-                  </label>
-                  <textarea
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent"
-                    rows={2}
-                    placeholder="Catatan khusus untuk pesanan Anda"
-                    value={customerInfo.notes}
-                    onChange={(e) => setCustomerInfo({...customerInfo, notes: e.target.value})}
-                  ></textarea>
-                </div>
-              </CardContent>
-            </Card>
           </div>
 
           {/* Order Summary */}
@@ -427,18 +358,17 @@ export default function SingleProductPembayaran({ params }: PembayaranPageProps)
                   <Separator />
                   <div className="flex justify-between font-semibold text-lg">
                     <span>Total</span>
-                    <span className="text-amber-600">{formatPrice(totalWithShipping)}</span>
+                    <span className="text-red-600">{formatPrice(totalWithShipping)}</span>
                   </div>
                 </div>
                 
                 <div className="space-y-2 pt-4">
-                  <Button 
-                    className="w-full bg-green-600 hover:bg-green-700 text-white"
+                  <Button
+                    className="w-full bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white"
                     onClick={handleWhatsAppCheckout}
-                    disabled={!customerInfo.name || !customerInfo.phone || !customerInfo.address}
                   >
                     <MessageCircle className="h-4 w-4 mr-2" />
-                    Bayar via WhatsApp
+                    Konfirmasi Pesanan via WhatsApp
                   </Button>
                   <p className="text-xs text-gray-500 text-center">
                     Anda akan diarahkan ke WhatsApp untuk konfirmasi pesanan

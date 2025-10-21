@@ -51,7 +51,7 @@ const allProducts = [
     ]
   },
   {
-    id: "casual-square-daily",
+    id: "cycamelia-neutral-series",
     name: "Cycamelia Neutral Series",
     price: 20000,
     image: "/images/3.jpg",
@@ -67,7 +67,7 @@ const allProducts = [
     ]
   },
   {
-    id: "bamboo-pashmina-eco-black",
+    id: "cycamelia-ciput-arab-tali-black",
     name: "Cycamelia Ciput Arab Tali Black",
     price: 18000,
     image: "/images/4.jpg",
@@ -82,7 +82,7 @@ const allProducts = [
     ]
   },
   {
-    id: "classic-square-collection",
+    id: "cycamelia-earth-series",
     name: "Cycamelia Earth Series",
     price: 20000,
     image: "/images/5.jpg",
@@ -98,7 +98,7 @@ const allProducts = [
     ]
   },
   {
-    id: "elegant-premium-square",
+    id: "cycamelia-serenity-series",
     name: "Cycamelia Serenity Series",
     price: 20000,
     image: "/images/6.jpg",
@@ -114,7 +114,7 @@ const allProducts = [
     ]
   },
   {
-    id: "bamboo-pashmina-eco-oat",
+    id: "cycamelia-ciput-arab-tali-oat",
     name: "Cycamelia Ciput Arab Tali Oat",
     price: 18000,
     image: "/images/7.jpg",
@@ -129,7 +129,7 @@ const allProducts = [
     ]
   },
   {
-    id: "premium-instant-series",
+    id: "cycamelia-bloom-series",
     name: "Cycamelia Bloom Series",
     price: 20000,
     image: "/images/8.jpg",
@@ -145,7 +145,7 @@ const allProducts = [
     ]
   },
   {
-    id: "geometric-square-modern-mocca",
+    id: "cycamelia-ciput-arab-tali-mocca",
     name: "Cycamelia Ciput Arab Tali Mocca",
     price: 18000,
     image: "/images/9.jpg",
@@ -160,7 +160,7 @@ const allProducts = [
     ]
   },
   {
-    id: "geometric-square-modern-butter",
+    id: "cycamelia-ciput-arab-tali-butter",
     name: "Cycamelia Ciput Arab Tali Butter",
     price: 18000,
     image: "/images/10.jpg",
@@ -175,7 +175,7 @@ const allProducts = [
     ]
   },
   {
-    id: "floral-square-collection",
+    id: "cycamelia-floral-series",
     name: "Cycamelia Floral Series",
     price: 20000,
     image: "/images/11.jpg",
@@ -191,7 +191,7 @@ const allProducts = [
     ]
   },
   {
-    id: "geometric-square-modern-navy",
+    id: "cycamelia-ciput-arab-tali-navy",
     name: "Cycamelia Ciput Arab Tali Navy",
     price: 18000,
     image: "/images/12.jpg",
@@ -206,7 +206,7 @@ const allProducts = [
     ]
   },
   {
-    id: "geometric-square-modern-nude",
+    id: "cycamelia-ciput-arab-tali-nude",
     name: "Cycamelia Ciput Arab Tali Nude",
     price: 18000,
     image: "/images/13.jpg",
@@ -221,7 +221,7 @@ const allProducts = [
     ]
   },
   {
-    id: "modern-square-pattern",
+    id: "cycamelia-earthtone-series",
     name: "Cycamelia Earthtone Series",
     price: 20000,
     image: "/images/14.jpg",
@@ -237,7 +237,7 @@ const allProducts = [
     ]
   },
   {
-    id: "luxury-instant-max",
+    id: "cycamelia-ciput-arab-tali-taupe",
     name: "Cycamelia Ciput Arab Tali Taupe",
     price: 18000,
     image: "/images/15.jpg",
@@ -252,7 +252,7 @@ const allProducts = [
     ]
   },
   {
-    id: "silk-pashmina-deluxe",
+    id: "cycamelia-delux-series",
     name: "Cycamelia Delux Series",
     price: 20000,
     image: "/images/16.jpg",
@@ -268,7 +268,7 @@ const allProducts = [
     ]
   },
   {
-    id: "elegant-premium-square-2",
+    id: "cycamelia-serenity-series-2",
     name: "Cycamelia Serenity Series",
     price: 20000,
     image: "/images/17.jpg",
@@ -284,7 +284,7 @@ const allProducts = [
     ]
   },
   {
-    id: "premium-instant-basic",
+    id: "cycamelia-ciput-arab-tali-black-2",
     name: "Cycamelia Ciput Arab Tali Black",
     price: 18000,
     image: "/images/18.jpg",
@@ -299,7 +299,7 @@ const allProducts = [
     ]
   },
   {
-    id: "luxury-instant-hijab",
+    id: "cycamelia-mist-series",
     name: "Cycamelia Mist Series",
     price: 20000,
     image: "/images/19.jpg",
@@ -315,7 +315,7 @@ const allProducts = [
     ]
   },
   {
-    id: "smart-instant-pro",
+    id: "cycamelia-ciput-arab-tali-milo",
     name: "Cycamelia Ciput Arab Tali Milo",
     price: 18000,
     image: "/images/20.jpg",
@@ -330,7 +330,7 @@ const allProducts = [
     ]
   },
   {
-    id: "royal-pashmina",
+    id: "cycamelia-royale-series",
     name: "Cycamelia Royale Series",
     price: 20000,
     image: "/images/21.jpg",
@@ -346,7 +346,7 @@ const allProducts = [
     ]
   },
   {
-    id: "vintage-square-heritage",
+    id: "cycamelia-ciput-arab-tali-abu-abu-2",
     name: "Cycamelia Ciput Arab Tali Abu-abu",
     price: 18000,
     image: "/images/22.jpg",

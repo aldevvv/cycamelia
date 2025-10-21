@@ -90,7 +90,7 @@ const allProducts = [
   },
   {
     id: "cycamelia-serenity-series",
-    name: "Elegant Premium Square - Cycamelia serenity series",
+    name: "Cycamelia Serenity Series",
     price: 20000,
     image: "/images/6.jpg",
     description: "Paris Premium dengan bahan yang lebih flowy, soft dan tegak saat dipakai",
@@ -243,7 +243,7 @@ const allProducts = [
     ]
   },
   {
-    id: "silk-pashmina-deluxe",
+    id: "cycamelia-delux-series",
     name: "Cycamelia Delux Series",
     price: 20000,
     image: "/images/16.jpg",

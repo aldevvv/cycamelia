@@ -332,8 +332,8 @@ const allProducts = [
     ]
   },
   {
-    id: "cycamelia-ciput-arab-tali-oat",
-    name: "Cycamelia Ciput Arab Tali Oat",
+    id: "cycamelia-ciput-arab-tali-butter",
+    name: "Cycamelia Ciput Arab Tali Butter",
     price: 20000,
     image: "/images/21.jpg",
     description: "Ciput terbuat dari bahan kaos Rayon yang halus, lembut, dan nyaman dipakai",

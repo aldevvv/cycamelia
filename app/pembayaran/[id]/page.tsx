@@ -21,33 +21,35 @@ import {
 // Sample product data - 22 products sesuai dengan file Produk Cycamelia.docx
 const allProducts = [
   {
-    id: "cycamelia-ciput-arab-tali-abu-abu",
-    name: "Cycamelia Ciput Arab Tali Abu-Abu",
+    id: "cycamelia-earthone-series",
+    name: "Cycamelia Earthone Series",
     price: 18000,
     image: "/images/1.jpg",
-    description: "Ciput terbuat dari bahan kaos Rayon yang halus, lembut, dan nyaman dipakai",
-    category: "ciput",
+    description: "Paris Premium dengan bahan yang lebih flowy, soft dan tegak saat dipakai",
+    category: "square",
     size: "All Size",
     details: [
-      "Ciput terbuat dari bahan kaos Rayon",
-      "Bahan Halus, Lembut, dan nyaman dipakai",
-      "Tidak sakit di telinga",
-      "Memiliki tali pengikat yang bisa diatur menyesuaikan lingkar kepala"
+      "Material Paris Premium",
+      "Serat lebih padat dari paris jaman dulu",
+      "Bahan katun mudah diatur",
+      "Tegap di dahi, cocok banget buat daily karena bahannya PW dan gak bikin gerah",
+      "Bahan lebih flowy, soft dan tegak saat dipakai"
     ]
   },
   {
-    id: "cycamelia-ciput-arab-tali-latte",
-    name: "Cycamelia Ciput Arab Tali Latte",
+    id: "cycamelia-delux-series",
+    name: "Cycamelia Delux Series",
     price: 18000,
     image: "/images/2.jpg",
-    description: "Ciput terbuat dari bahan kaos Rayon yang halus, lembut, dan nyaman dipakai",
-    category: "ciput",
+    description: "Paris Premium dengan bahan yang flowy, soft, dan tegak saat dipakai",
+    category: "Square",
     size: "All Size",
     details: [
-      "Ciput terbuat dari bahan kaos Rayon",
-      "Bahan Halus, Lembut, dan nyaman dipakai",
-      "Tidak sakit di telinga",
-      "Memiliki tali pengikat yang bisa diatur menyesuaikan lingkar kepala"
+     "Material Paris Premium",
+      "Serat lebih padat dari paris jaman dulu",
+      "Bahan katun mudah diatur",
+      "Tegap di dahi, cocok banget buat daily karena bahannya PW dan gak bikin gerah",
+      "Bahan lebih flowy, soft dan tegak saat dipakai"
     ]
   },
   {
@@ -67,18 +69,19 @@ const allProducts = [
     ]
   },
   {
-    id: "cycamelia-ciput-arab-tali-black",
-    name: "Cycamelia Ciput Arab Tali Black",
+    id: "cycamelia-neutral-series",
+    name: "Cycamelia Neutral Series",
     price: 18000,
     image: "/images/4.jpg",
-    description: "Ciput terbuat dari bahan kaos Rayon yang halus, lembut, dan nyaman dipakai",
-    category: "ciput",
+    description: "Paris Premium dengan bahan yang lebih flowy, soft dan tegak saat dipakai",
+    category: "Square",
     size: "All Size",
     details: [
-      "Ciput terbuat dari bahan kaos Rayon",
-      "Bahan Halus, Lembut, dan nyaman dipakai",
-      "Tidak sakit di telinga",
-      "Memiliki tali pengikat yang bisa diatur menyesuaikan lingkar kepala"
+      "Material Paris Premium",
+      "Serat lebih padat dari paris jaman dulu",
+      "Bahan katun mudah diatur",
+      "Tegap di dahi, cocok banget buat daily karena bahannya PW dan gak bikin gerah",
+      "Bahan lebih flowy, soft dan tegak saat dipakai"
     ]
   },
   {
@@ -114,18 +117,19 @@ const allProducts = [
     ]
   },
   {
-    id: "cycamelia-ciput-arab-tali-oat",
-    name: "Cycamelia Ciput Arab Tali Oat",
+    id: "cycamelia-royale-series",
+    name: "Cycamelia Royale series",
     price: 18000,
     image: "/images/7.jpg",
-    description: "Ciput terbuat dari bahan kaos Rayon yang halus, lembut, dan nyaman dipakai",
+    description: "Paris Premium dengan bahan yang lebih flowy, soft dan tegak saat dipakai",
     category: "ciput",
     size: "All Size",
     details: [
-      "Ciput terbuat dari bahan kaos Rayon",
-      "Bahan Halus, Lembut, dan nyaman dipakai",
-      "Tidak sakit di telinga",
-      "Memiliki tali pengikat yang bisa diatur menyesuaikan lingkar kepala"
+      "Material Paris Premium",
+      "Serat lebih padat dari paris jaman dulu",
+      "Bahan katun mudah diatur",
+      "Tegap di dahi, cocok banget buat daily karena bahannya PW dan gak bikin gerah",
+      "Bahan lebih flowy, soft dan tegak saat dipakai"
     ]
   },
   {
@@ -145,33 +149,35 @@ const allProducts = [
     ]
   },
   {
-    id: "cycamelia-ciput-arab-tali-mocca",
-    name: "Cycamelia Ciput Arab Tali Mocca",
+    id: "cycamelia-elegant-series",
+    name: "Cycamelia Elegant Series",
     price: 18000,
     image: "/images/9.jpg",
-    description: "Ciput terbuat dari bahan kaos Rayon yang halus, lembut, dan nyaman dipakai",
+    description: "Paris Premium dengan bahan yang lebih flowy, soft dan tegak saat dipakai",
     category: "ciput",
     size: "All Size",
     details: [
-      "Ciput terbuat dari bahan kaos Rayon",
-      "Bahan Halus, Lembut, dan nyaman dipakai",
-      "Tidak sakit di telinga",
-      "Memiliki tali pengikat yang bisa diatur menyesuaikan lingkar kepala"
+      "Material Paris Premium",
+      "Serat lebih padat dari paris jaman dulu",
+      "Bahan katun mudah diatur",
+      "Tegap di dahi, cocok banget buat daily karena bahannya PW dan gak bikin gerah",
+      "Bahan lebih flowy, soft dan tegak saat dipakai"
     ]
   },
   {
-    id: "cycamelia-ciput-arab-tali-butter",
-    name: "Cycamelia Ciput Arab Tali Butter",
+    id: "cycamelia-mist-series",
+    name: "Cycamelia Mist series",
     price: 18000,
     image: "/images/10.jpg",
-    description: "Ciput terbuat dari bahan kaos Rayon yang halus, lembut, dan nyaman dipakai",
-    category: "ciput",
+    description: "Paris Premium dengan bahan yang lebih flowy, soft dan tegak saat dipakai",
+    category: "square",
     size: "All Size",
     details: [
-      "Ciput terbuat dari bahan kaos Rayon",
-      "Bahan Halus, Lembut, dan nyaman dipakai",
-      "Tidak sakit di telinga",
-      "Memiliki tali pengikat yang bisa diatur menyesuaikan lingkar kepala"
+      "Material Paris Premium",
+      "Serat lebih padat dari paris jaman dulu",
+      "Bahan katun mudah diatur",
+      "Tegap di dahi, cocok banget buat daily karena bahannya PW dan gak bikin gerah",
+      "Bahan lebih flowy, soft dan tegak saat dipakai"
     ]
   },
   {
@@ -191,8 +197,8 @@ const allProducts = [
     ]
   },
   {
-    id: "cycamelia-ciput-arab-tali-navy",
-    name: "Cycamelia Ciput Arab Tali Navy",
+    id: "cycamelia-ciput-arab-tali-black",
+    name: "Cycamelia Ciput Arab Tali Black",
     price: 18000,
     image: "/images/12.jpg",
     description: "Ciput terbuat dari bahan kaos Rayon yang halus, lembut, dan nyaman dipakai",
@@ -207,7 +213,7 @@ const allProducts = [
   },
   {
     id: "cycamelia-ciput-arab-tali-nude",
-    name: "Cycamelia Ciput Arab Tali Nude",
+    name: "Cycamelia Ciput Arab Tali Navy",
     price: 18000,
     image: "/images/13.jpg",
     description: "Ciput terbuat dari bahan kaos Rayon yang halus, lembut, dan nyaman dipakai",
@@ -221,24 +227,23 @@ const allProducts = [
     ]
   },
   {
-    id: "cycamelia-earthtone-series",
-    name: "Cycamelia Earthtone Series",
+    id: "cycamelia-ciput-arab-tali-taupe",
+    name: "Cycamelia Ciput Arab Tali Taupe",
     price: 20000,
     image: "/images/14.jpg",
-    description: "Paris Premium dengan bahan yang lebih flowy, soft dan tegak saat dipakai",
+    description: "Ciput terbuat dari bahan kaos Rayon yang halus, lembut, dan nyaman dipakai",
     category: "square",
     size: "110 × 110cm",
     details: [
-      "Material Paris Premium",
-      "Serat lebih padat dari paris jaman dulu",
-      "Bahan katun mudah diatur",
-      "Tegap di dahi, cocok banget buat daily karena bahannya PW dan gak bikin gerah",
-      "Bahan lebih flowy, soft dan tegak saat dipakai"
+      "Ciput terbuat dari bahan kaos Rayon",
+      "Bahan Halus, Lembut, dan nyaman dipakai",
+      "Tidak sakit di telinga",
+      "Memiliki tali pengikat yang bisa diatur menyesuaikan lingkar kepala"
     ]
   },
   {
-    id: "cycamelia-ciput-arab-tali-taupe",
-    name: "Cycamelia Ciput Arab Tali Taupe",
+    id: "cycamelia-ciput-arab-tali-dark-grey",
+    name: "Cycamelia Ciput Arab Tali Dark Grey",
     price: 18000,
     image: "/images/15.jpg",
     description: "Ciput terbuat dari bahan kaos Rayon yang halus, lembut, dan nyaman dipakai",
@@ -252,40 +257,38 @@ const allProducts = [
     ]
   },
   {
-    id: "cycamelia-delux-series",
-    name: "Cycamelia Delux Series",
+    id: "cycamelia-ciput-arab-tali-abu-abu",
+    name: "Cycamelia Ciput Arab Tali Abu-abu",
     price: 20000,
     image: "/images/16.jpg",
-    description: "Paris Premium dengan bahan yang lebih flowy, soft dan tegak saat dipakai",
-    category: "square",
-    size: "110 × 110cm",
+    description: "Ciput terbuat dari bahan kaos Rayon yang halus, lembut, dan nyaman dipakai",
+    category: "ciput",
+    size: "all size",
     details: [
-      "Material Paris Premium",
-      "Serat lebih padat dari paris jaman dulu",
-      "Bahan katun mudah diatur",
-      "Tegap di dahi, cocok banget buat daily karena bahannya PW dan gak bikin gerah",
-      "Bahan lebih flowy, soft dan tegak saat dipakai"
+      "Ciput terbuat dari bahan kaos Rayon",
+      "Bahan Halus, Lembut, dan nyaman dipakai",
+      "Tidak sakit di telinga",
+      "Memiliki tali pengikat yang bisa diatur menyesuaikan lingkar kepala"
     ]
   },
   {
-    id: "cycamelia-serenity-series-2",
-    name: "Cycamelia Serenity Series",
+    id: "cycamelia-ciput-arab-tali-milo",
+    name: "Cycamelia Ciput Arab Tali Milo",
     price: 20000,
     image: "/images/17.jpg",
-    description: "Paris Premium dengan bahan yang lebih flowy, soft dan tegak saat dipakai",
-    category: "square",
-    size: "110 × 110cm",
+    description: "Ciput terbuat dari bahan kaos Rayon yang halus, lembut, dan nyaman dipakai",
+    category: "ciput",
+    size: "all size",
     details: [
-      "Material Paris Premium",
-      "Serat lebih padat dari paris jaman dulu",
-      "Bahan katun mudah diatur",
-      "Tegap di dahi, cocok banget buat daily karena bahannya PW dan gak bikin gerah",
-      "Bahan lebih flowy, soft dan tegak saat dipakai"
+      "Ciput terbuat dari bahan kaos Rayon",
+      "Bahan Halus, Lembut, dan nyaman dipakai",
+      "Tidak sakit di telinga",
+      "Memiliki tali pengikat yang bisa diatur menyesuaikan lingkar kepala"
     ]
   },
   {
-    id: "cycamelia-ciput-arab-tali-black-2",
-    name: "Cycamelia Ciput Arab Tali Black",
+    id: "cycamelia-ciput-arab-tali-mocca",
+    name: "Cycamelia Ciput Arab Tali Mocca",
     price: 18000,
     image: "/images/18.jpg",
     description: "Ciput terbuat dari bahan kaos Rayon yang halus, lembut, dan nyaman dipakai",
@@ -299,24 +302,23 @@ const allProducts = [
     ]
   },
   {
-    id: "cycamelia-mist-series",
-    name: "Cycamelia Mist Series",
+    id: "cycamelia-ciput-arab-tali-nude",
+    name: "Cycamelia Ciput Arab Tali Nude",
     price: 20000,
     image: "/images/19.jpg",
-    description: "Paris Premium dengan bahan yang lebih flowy, soft dan tegak saat dipakai",
-    category: "square",
-    size: "110 × 110cm",
+    description: "Ciput terbuat dari bahan kaos Rayon yang halus, lembut, dan nyaman dipakai",
+    category: "ciput",
+    size: "All Size",
     details: [
-      "Material Paris Premium",
-      "Serat lebih padat dari paris jaman dulu",
-      "Bahan katun mudah diatur",
-      "Tegap di dahi, cocok banget buat daily karena bahannya PW dan gak bikin gerah",
-      "Bahan lebih flowy, soft dan tegak saat dipakai"
+      "Ciput terbuat dari bahan kaos Rayon",
+      "Bahan Halus, Lembut, dan nyaman dipakai",
+      "Tidak sakit di telinga",
+      "Memiliki tali pengikat yang bisa diatur menyesuaikan lingkar kepala"
     ]
   },
   {
-    id: "cycamelia-ciput-arab-tali-milo",
-    name: "Cycamelia Ciput Arab Tali Milo",
+    id: "cycamelia-ciput-arab-tali-oat",
+    name: "Cycamelia Ciput Arab Tali Oat",
     price: 18000,
     image: "/images/20.jpg",
     description: "Ciput terbuat dari bahan kaos Rayon yang halus, lembut, dan nyaman dipakai",
@@ -330,24 +332,23 @@ const allProducts = [
     ]
   },
   {
-    id: "cycamelia-royale-series",
-    name: "Cycamelia Royale Series",
+    id: "cycamelia-ciput-arab-tali-oat",
+    name: "Cycamelia Ciput Arab Tali Oat",
     price: 20000,
     image: "/images/21.jpg",
-    description: "Paris Premium dengan bahan yang lebih flowy, soft dan tegak saat dipakai",
-    category: "square",
-    size: "110 × 110cm",
+    description: "Ciput terbuat dari bahan kaos Rayon yang halus, lembut, dan nyaman dipakai",
+    category: "ciput",
+    size: "All Size",
     details: [
-      "Material Paris Premium",
-      "Serat lebih padat dari paris jaman dulu",
-      "Bahan katun mudah diatur",
-      "Tegap di dahi, cocok banget buat daily karena bahannya PW dan gak bikin gerah",
-      "Bahan lebih flowy, soft dan tegak saat dipakai"
+      "Ciput terbuat dari bahan kaos Rayon",
+      "Bahan Halus, Lembut, dan nyaman dipakai",
+      "Tidak sakit di telinga",
+      "Memiliki tali pengikat yang bisa diatur menyesuaikan lingkar kepala"
     ]
   },
   {
-    id: "cycamelia-ciput-arab-tali-abu-abu-2",
-    name: "Cycamelia Ciput Arab Tali Abu-abu",
+    id: "cycamelia-ciput-arab-tali-latte",
+    name: "Cycamelia Ciput Arab Tali Latte",
     price: 18000,
     image: "/images/22.jpg",
     description: "Ciput terbuat dari bahan kaos Rayon yang halus, lembut, dan nyaman dipakai",

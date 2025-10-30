@@ -407,16 +407,55 @@ export default function SingleProductPembayaran({
 
   // Available colors for the products
   const availableColors = [
-    "Putih",
-    "Hitam",
-    "Abu-abu",
-    "Navy",
-    "Maroon",
-    "Coklat",
+    "Iron",
+    "Scarlet Brown",
+    "Dark Denim",
+    "Sand",
+    "Ash Grey",
+    "Fossil",
+    "Avocado",
+    "Graft Compote",
+    "Abu - Abu",
+    "Silver",
+    "Misty Grey",
+    "Army",
+    "Crimson",
+    "Seapink",
+    "Desert Sage",
+    "Lime",
+    "Medium Oak",
+    "Peanut",
+    "Smoky Topaz",
+    "Broken White",
+    "Creocle Pink",
+    "Pistachio",
+    "Dove Grey",
     "Cream",
-    "Dusty Pink",
-    "Sage Green",
+    "Khaki",
+    "Frapucino",
     "Mocca",
+    "Nude",
+    "Milo",
+    "Capucinno",
+    "Coklat Pramuka",
+    "White",
+    "Maroon",
+    "Navy",
+    "Dark Grey",
+    "Black",
+    "Biscuit",
+    "Dark Purple",
+    "Burgundy",
+    "Charcoal",
+    "Lavender Misty",
+    "Tortilla",
+    "Major Brown",
+    "Ice Blue",
+    "Taupe",
+    "Stormy Weather",
+    "Lava Smoke",
+    "Matte Green",
+    "Twilight Lavender",
   ];
 
   useEffect(() => {
@@ -449,17 +488,33 @@ export default function SingleProductPembayaran({
     }
   };
 
+  // Check if product already has color in its name
+  const hasColorInName =
+    product?.name.toLowerCase().includes("black") ||
+    product?.name.toLowerCase().includes("navy") ||
+    product?.name.toLowerCase().includes("taupe") ||
+    product?.name.toLowerCase().includes("dark grey") ||
+    product?.name.toLowerCase().includes("abu-abu") ||
+    product?.name.toLowerCase().includes("milo") ||
+    product?.name.toLowerCase().includes("mocca") ||
+    product?.name.toLowerCase().includes("nude") ||
+    product?.name.toLowerCase().includes("oat") ||
+    product?.name.toLowerCase().includes("butter") ||
+    product?.name.toLowerCase().includes("latte") ||
+    product?.category === "ciput";
+
   const handleWhatsAppCheckout = () => {
-    if (!selectedColor) {
+    if (!hasColorInName && !selectedColor) {
       alert("Silakan pilih warna terlebih dahulu");
       return;
     }
 
+    const colorInfo = hasColorInName ? "" : `Warna: ${selectedColor}\n`;
     const message =
       `*ORDER BARU - CYCAMELIA*\n\n` +
       `*Pesanan:*\n` +
       `${product?.name} (x${quantity})\n` +
-      `Warna: ${selectedColor}\n` +
+      colorInfo +
       `Harga: ${formatPrice((product?.price || 0) * quantity)}\n\n` +
       `*Total: ${formatPrice(totalPrice)}*\n\n` +
       `*Informasi Pembayaran:*\n` +
@@ -541,25 +596,27 @@ export default function SingleProductPembayaran({
                       </span>
                     </div>
 
-                    {/* Color Selection */}
-                    <div className="flex flex-col sm:flex-row sm:items-center space-y-2 sm:space-y-0 sm:space-x-2 mt-4">
-                      <span className="text-sm text-gray-700">Warna:</span>
-                      <Select
-                        value={selectedColor}
-                        onValueChange={setSelectedColor}
-                      >
-                        <SelectTrigger className="w-full sm:w-48">
-                          <SelectValue placeholder="Pilih warna" />
-                        </SelectTrigger>
-                        <SelectContent>
-                          {availableColors.map((color) => (
-                            <SelectItem key={color} value={color}>
-                              {color}
-                            </SelectItem>
-                          ))}
-                        </SelectContent>
-                      </Select>
-                    </div>
+                    {/* Color Selection - Only show if product doesn't have color in name */}
+                    {!hasColorInName && (
+                      <div className="flex flex-col sm:flex-row sm:items-center space-y-2 sm:space-y-0 sm:space-x-2 mt-4">
+                        <span className="text-sm text-gray-700">Warna:</span>
+                        <Select
+                          value={selectedColor}
+                          onValueChange={setSelectedColor}
+                        >
+                          <SelectTrigger className="w-full sm:w-48">
+                            <SelectValue placeholder="Pilih warna" />
+                          </SelectTrigger>
+                          <SelectContent>
+                            {availableColors.map((color) => (
+                              <SelectItem key={color} value={color}>
+                                {color}
+                              </SelectItem>
+                            ))}
+                          </SelectContent>
+                        </Select>
+                      </div>
+                    )}
 
                     {/* Quantity Selection */}
                     <div className="flex flex-col sm:flex-row sm:items-center space-y-2 sm:space-y-0 sm:space-x-2 mt-4">
@@ -624,7 +681,7 @@ export default function SingleProductPembayaran({
                     </span>
                     <span>{formatPrice(product.price * quantity)}</span>
                   </div>
-                  {selectedColor && (
+                  {!hasColorInName && selectedColor && (
                     <div className="flex justify-between text-sm text-gray-600">
                       <span>Warna:</span>
                       <span>{selectedColor}</span>
@@ -640,14 +697,14 @@ export default function SingleProductPembayaran({
                 </div>
 
                 {/* Bank Information */}
-                <div className="mt-4 p-4 bg-blue-50 rounded-lg border border-blue-200">
+                <div className="mt-4 p-4 bg-red-50 rounded-lg border border-red-200">
                   <div className="flex items-center mb-2">
-                    <CreditCard className="h-4 w-4 text-blue-600 mr-2" />
-                    <span className="font-semibold text-blue-900">
+                    <CreditCard className="h-4 w-4 text-red-600 mr-2" />
+                    <span className="font-semibold text-red-900">
                       Informasi Pembayaran
                     </span>
                   </div>
-                  <div className="space-y-1 text-sm text-blue-800">
+                  <div className="space-y-1 text-sm text-red-800">
                     <div className="flex justify-between">
                       <span>Bank:</span>
                       <span className="font-medium">BCA</span>
@@ -667,13 +724,13 @@ export default function SingleProductPembayaran({
                   <Button
                     className="w-full bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white disabled:opacity-50"
                     onClick={handleWhatsAppCheckout}
-                    disabled={!selectedColor}
+                    disabled={!hasColorInName && !selectedColor}
                   >
                     <MessageCircle className="h-4 w-4 mr-2" />
                     Konfirmasi Pesanan via WhatsApp
                   </Button>
                   <p className="text-xs text-gray-500 text-center">
-                    {!selectedColor
+                    {!hasColorInName && !selectedColor
                       ? "Pilih warna untuk melanjutkan"
                       : "Anda akan diarahkan ke WhatsApp untuk konfirmasi pesanan"}
                   </p>

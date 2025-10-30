@@ -15,7 +15,7 @@ import {
   Plus,
   ArrowLeft,
   ShoppingBag,
-  MessageCircle
+  MessageCircle,
 } from "lucide-react";
 
 // Sample product data - 22 products sesuai dengan file Produk Cycamelia.docx
@@ -25,7 +25,8 @@ const allProducts = [
     name: "Cycamelia Earthone Series",
     price: 18000,
     image: "/images/1.jpg",
-    description: "Paris Premium dengan bahan yang lebih flowy, soft dan tegak saat dipakai",
+    description:
+      "Paris Premium dengan bahan yang lebih flowy, soft dan tegak saat dipakai",
     category: "square",
     size: "All Size",
     details: [
@@ -33,31 +34,33 @@ const allProducts = [
       "Serat lebih padat dari paris jaman dulu",
       "Bahan katun mudah diatur",
       "Tegap di dahi, cocok banget buat daily karena bahannya PW dan gak bikin gerah",
-      "Bahan lebih flowy, soft dan tegak saat dipakai"
-    ]
+      "Bahan lebih flowy, soft dan tegak saat dipakai",
+    ],
   },
   {
     id: "cycamelia-delux-series",
     name: "Cycamelia Delux Series",
     price: 18000,
     image: "/images/2.jpg",
-    description: "Paris Premium dengan bahan yang flowy, soft, dan tegak saat dipakai",
+    description:
+      "Paris Premium dengan bahan yang flowy, soft, dan tegak saat dipakai",
     category: "Square",
     size: "All Size",
     details: [
-     "Material Paris Premium",
+      "Material Paris Premium",
       "Serat lebih padat dari paris jaman dulu",
       "Bahan katun mudah diatur",
       "Tegap di dahi, cocok banget buat daily karena bahannya PW dan gak bikin gerah",
-      "Bahan lebih flowy, soft dan tegak saat dipakai"
-    ]
+      "Bahan lebih flowy, soft dan tegak saat dipakai",
+    ],
   },
   {
     id: "cycamelia-neutral-series",
     name: "Cycamelia Neutral Series",
     price: 20000,
     image: "/images/3.jpg",
-    description: "Paris Premium dengan bahan yang lebih flowy, soft dan tegak saat dipakai",
+    description:
+      "Paris Premium dengan bahan yang lebih flowy, soft dan tegak saat dipakai",
     category: "square",
     size: "110 × 110cm",
     details: [
@@ -65,15 +68,16 @@ const allProducts = [
       "Serat lebih padat dari paris jaman dulu",
       "Bahan katun mudah diatur",
       "Tegap di dahi, cocok banget buat daily karena bahannya PW dan gak bikin gerah",
-      "Bahan lebih flowy, soft dan tegak saat dipakai"
-    ]
+      "Bahan lebih flowy, soft dan tegak saat dipakai",
+    ],
   },
   {
     id: "cycamelia-neutral-series",
     name: "Cycamelia Neutral Series",
     price: 18000,
     image: "/images/4.jpg",
-    description: "Paris Premium dengan bahan yang lebih flowy, soft dan tegak saat dipakai",
+    description:
+      "Paris Premium dengan bahan yang lebih flowy, soft dan tegak saat dipakai",
     category: "Square",
     size: "All Size",
     details: [
@@ -81,15 +85,16 @@ const allProducts = [
       "Serat lebih padat dari paris jaman dulu",
       "Bahan katun mudah diatur",
       "Tegap di dahi, cocok banget buat daily karena bahannya PW dan gak bikin gerah",
-      "Bahan lebih flowy, soft dan tegak saat dipakai"
-    ]
+      "Bahan lebih flowy, soft dan tegak saat dipakai",
+    ],
   },
   {
     id: "cycamelia-earth-series",
     name: "Cycamelia Earth Series",
     price: 20000,
     image: "/images/5.jpg",
-    description: "Paris Premium dengan bahan yang lebih flowy, soft dan tegak saat dipakai",
+    description:
+      "Paris Premium dengan bahan yang lebih flowy, soft dan tegak saat dipakai",
     category: "square",
     size: "110 × 110cm",
     details: [
@@ -97,15 +102,16 @@ const allProducts = [
       "Serat lebih padat dari paris jaman dulu",
       "Bahan katun mudah diatur",
       "Tegap di dahi, cocok banget buat daily karena bahannya PW dan gak bikin gerah",
-      "Bahan lebih flowy, soft dan tegak saat dipakai"
-    ]
+      "Bahan lebih flowy, soft dan tegak saat dipakai",
+    ],
   },
   {
     id: "cycamelia-serenity-series",
     name: "Cycamelia Serenity Series",
     price: 20000,
     image: "/images/6.jpg",
-    description: "Paris Premium dengan bahan yang lebih flowy, soft dan tegak saat dipakai",
+    description:
+      "Paris Premium dengan bahan yang lebih flowy, soft dan tegak saat dipakai",
     category: "square",
     size: "110 × 110cm",
     details: [
@@ -113,15 +119,16 @@ const allProducts = [
       "Serat lebih padat dari paris jaman dulu",
       "Bahan katun mudah diatur",
       "Tegap di dahi, cocok banget buat daily karena bahannya PW dan gak bikin gerah",
-      "Bahan lebih flowy, soft dan tegak saat dipakai"
-    ]
+      "Bahan lebih flowy, soft dan tegak saat dipakai",
+    ],
   },
   {
     id: "cycamelia-royale-series",
     name: "Cycamelia Royale series",
     price: 18000,
     image: "/images/7.jpg",
-    description: "Paris Premium dengan bahan yang lebih flowy, soft dan tegak saat dipakai",
+    description:
+      "Paris Premium dengan bahan yang lebih flowy, soft dan tegak saat dipakai",
     category: "ciput",
     size: "All Size",
     details: [
@@ -129,15 +136,16 @@ const allProducts = [
       "Serat lebih padat dari paris jaman dulu",
       "Bahan katun mudah diatur",
       "Tegap di dahi, cocok banget buat daily karena bahannya PW dan gak bikin gerah",
-      "Bahan lebih flowy, soft dan tegak saat dipakai"
-    ]
+      "Bahan lebih flowy, soft dan tegak saat dipakai",
+    ],
   },
   {
     id: "cycamelia-bloom-series",
     name: "Cycamelia Bloom Series",
     price: 20000,
     image: "/images/8.jpg",
-    description: "Paris Premium dengan bahan yang lebih flowy, soft dan tegak saat dipakai",
+    description:
+      "Paris Premium dengan bahan yang lebih flowy, soft dan tegak saat dipakai",
     category: "square",
     size: "110 × 110cm",
     details: [
@@ -145,15 +153,16 @@ const allProducts = [
       "Serat lebih padat dari paris jaman dulu",
       "Bahan katun mudah diatur",
       "Tegap di dahi, cocok banget buat daily karena bahannya PW dan gak bikin gerah",
-      "Bahan lebih flowy, soft dan tegak saat dipakai"
-    ]
+      "Bahan lebih flowy, soft dan tegak saat dipakai",
+    ],
   },
   {
     id: "cycamelia-elegant-series",
     name: "Cycamelia Elegant Series",
     price: 18000,
     image: "/images/9.jpg",
-    description: "Paris Premium dengan bahan yang lebih flowy, soft dan tegak saat dipakai",
+    description:
+      "Paris Premium dengan bahan yang lebih flowy, soft dan tegak saat dipakai",
     category: "ciput",
     size: "All Size",
     details: [
@@ -161,15 +170,16 @@ const allProducts = [
       "Serat lebih padat dari paris jaman dulu",
       "Bahan katun mudah diatur",
       "Tegap di dahi, cocok banget buat daily karena bahannya PW dan gak bikin gerah",
-      "Bahan lebih flowy, soft dan tegak saat dipakai"
-    ]
+      "Bahan lebih flowy, soft dan tegak saat dipakai",
+    ],
   },
   {
     id: "cycamelia-mist-series",
     name: "Cycamelia Mist series",
     price: 18000,
     image: "/images/10.jpg",
-    description: "Paris Premium dengan bahan yang lebih flowy, soft dan tegak saat dipakai",
+    description:
+      "Paris Premium dengan bahan yang lebih flowy, soft dan tegak saat dipakai",
     category: "square",
     size: "All Size",
     details: [
@@ -177,15 +187,16 @@ const allProducts = [
       "Serat lebih padat dari paris jaman dulu",
       "Bahan katun mudah diatur",
       "Tegap di dahi, cocok banget buat daily karena bahannya PW dan gak bikin gerah",
-      "Bahan lebih flowy, soft dan tegak saat dipakai"
-    ]
+      "Bahan lebih flowy, soft dan tegak saat dipakai",
+    ],
   },
   {
     id: "cycamelia-floral-series",
     name: "Cycamelia Floral Series",
     price: 20000,
     image: "/images/11.jpg",
-    description: "Paris Premium dengan bahan yang lebih flowy, soft dan tegak saat dipakai",
+    description:
+      "Paris Premium dengan bahan yang lebih flowy, soft dan tegak saat dipakai",
     category: "square",
     size: "110 × 110cm",
     details: [
@@ -193,185 +204,198 @@ const allProducts = [
       "Serat lebih padat dari paris jaman dulu",
       "Bahan katun mudah diatur",
       "Tegap di dahi, cocok banget buat daily karena bahannya PW dan gak bikin gerah",
-      "Bahan lebih flowy, soft dan tegak saat dipakai"
-    ]
+      "Bahan lebih flowy, soft dan tegak saat dipakai",
+    ],
   },
   {
     id: "cycamelia-ciput-arab-tali-black",
     name: "Cycamelia Ciput Arab Tali Black",
     price: 18000,
     image: "/images/12.jpg",
-    description: "Ciput terbuat dari bahan kaos Rayon yang halus, lembut, dan nyaman dipakai",
+    description:
+      "Ciput terbuat dari bahan kaos Rayon yang halus, lembut, dan nyaman dipakai",
     category: "ciput",
     size: "All Size",
     details: [
       "Ciput terbuat dari bahan kaos Rayon",
       "Bahan Halus, Lembut, dan nyaman dipakai",
       "Tidak sakit di telinga",
-      "Memiliki tali pengikat yang bisa diatur menyesuaikan lingkar kepala"
-    ]
+      "Memiliki tali pengikat yang bisa diatur menyesuaikan lingkar kepala",
+    ],
   },
   {
     id: "cycamelia-ciput-arab-tali-nude",
     name: "Cycamelia Ciput Arab Tali Navy",
     price: 18000,
     image: "/images/13.jpg",
-    description: "Ciput terbuat dari bahan kaos Rayon yang halus, lembut, dan nyaman dipakai",
+    description:
+      "Ciput terbuat dari bahan kaos Rayon yang halus, lembut, dan nyaman dipakai",
     category: "ciput",
     size: "All Size",
     details: [
       "Ciput terbuat dari bahan kaos Rayon",
       "Bahan Halus, Lembut, dan nyaman dipakai",
       "Tidak sakit di telinga",
-      "Memiliki tali pengikat yang bisa diatur menyesuaikan lingkar kepala"
-    ]
+      "Memiliki tali pengikat yang bisa diatur menyesuaikan lingkar kepala",
+    ],
   },
   {
     id: "cycamelia-ciput-arab-tali-taupe",
     name: "Cycamelia Ciput Arab Tali Taupe",
     price: 20000,
     image: "/images/14.jpg",
-    description: "Ciput terbuat dari bahan kaos Rayon yang halus, lembut, dan nyaman dipakai",
+    description:
+      "Ciput terbuat dari bahan kaos Rayon yang halus, lembut, dan nyaman dipakai",
     category: "square",
     size: "110 × 110cm",
     details: [
       "Ciput terbuat dari bahan kaos Rayon",
       "Bahan Halus, Lembut, dan nyaman dipakai",
       "Tidak sakit di telinga",
-      "Memiliki tali pengikat yang bisa diatur menyesuaikan lingkar kepala"
-    ]
+      "Memiliki tali pengikat yang bisa diatur menyesuaikan lingkar kepala",
+    ],
   },
   {
     id: "cycamelia-ciput-arab-tali-dark-grey",
     name: "Cycamelia Ciput Arab Tali Dark Grey",
     price: 18000,
     image: "/images/15.jpg",
-    description: "Ciput terbuat dari bahan kaos Rayon yang halus, lembut, dan nyaman dipakai",
+    description:
+      "Ciput terbuat dari bahan kaos Rayon yang halus, lembut, dan nyaman dipakai",
     category: "ciput",
     size: "All Size",
     details: [
       "Ciput terbuat dari bahan kaos Rayon",
       "Bahan Halus, Lembut, dan nyaman dipakai",
       "Tidak sakit di telinga",
-      "Memiliki tali pengikat yang bisa diatur menyesuaikan lingkar kepala"
-    ]
+      "Memiliki tali pengikat yang bisa diatur menyesuaikan lingkar kepala",
+    ],
   },
   {
     id: "cycamelia-ciput-arab-tali-abu-abu",
     name: "Cycamelia Ciput Arab Tali Abu-abu",
     price: 20000,
     image: "/images/16.jpg",
-    description: "Ciput terbuat dari bahan kaos Rayon yang halus, lembut, dan nyaman dipakai",
+    description:
+      "Ciput terbuat dari bahan kaos Rayon yang halus, lembut, dan nyaman dipakai",
     category: "ciput",
     size: "all size",
     details: [
       "Ciput terbuat dari bahan kaos Rayon",
       "Bahan Halus, Lembut, dan nyaman dipakai",
       "Tidak sakit di telinga",
-      "Memiliki tali pengikat yang bisa diatur menyesuaikan lingkar kepala"
-    ]
+      "Memiliki tali pengikat yang bisa diatur menyesuaikan lingkar kepala",
+    ],
   },
   {
     id: "cycamelia-ciput-arab-tali-milo",
     name: "Cycamelia Ciput Arab Tali Milo",
     price: 20000,
     image: "/images/17.jpg",
-    description: "Ciput terbuat dari bahan kaos Rayon yang halus, lembut, dan nyaman dipakai",
+    description:
+      "Ciput terbuat dari bahan kaos Rayon yang halus, lembut, dan nyaman dipakai",
     category: "ciput",
     size: "all size",
     details: [
       "Ciput terbuat dari bahan kaos Rayon",
       "Bahan Halus, Lembut, dan nyaman dipakai",
       "Tidak sakit di telinga",
-      "Memiliki tali pengikat yang bisa diatur menyesuaikan lingkar kepala"
-    ]
+      "Memiliki tali pengikat yang bisa diatur menyesuaikan lingkar kepala",
+    ],
   },
   {
     id: "cycamelia-ciput-arab-tali-mocca",
     name: "Cycamelia Ciput Arab Tali Mocca",
     price: 18000,
     image: "/images/18.jpg",
-    description: "Ciput terbuat dari bahan kaos Rayon yang halus, lembut, dan nyaman dipakai",
+    description:
+      "Ciput terbuat dari bahan kaos Rayon yang halus, lembut, dan nyaman dipakai",
     category: "ciput",
     size: "All Size",
     details: [
       "Ciput terbuat dari bahan kaos Rayon",
       "Bahan Halus, Lembut, dan nyaman dipakai",
       "Tidak sakit di telinga",
-      "Memiliki tali pengikat yang bisa diatur menyesuaikan lingkar kepala"
-    ]
+      "Memiliki tali pengikat yang bisa diatur menyesuaikan lingkar kepala",
+    ],
   },
   {
     id: "cycamelia-ciput-arab-tali-nude",
     name: "Cycamelia Ciput Arab Tali Nude",
     price: 20000,
     image: "/images/19.jpg",
-    description: "Ciput terbuat dari bahan kaos Rayon yang halus, lembut, dan nyaman dipakai",
+    description:
+      "Ciput terbuat dari bahan kaos Rayon yang halus, lembut, dan nyaman dipakai",
     category: "ciput",
     size: "All Size",
     details: [
       "Ciput terbuat dari bahan kaos Rayon",
       "Bahan Halus, Lembut, dan nyaman dipakai",
       "Tidak sakit di telinga",
-      "Memiliki tali pengikat yang bisa diatur menyesuaikan lingkar kepala"
-    ]
+      "Memiliki tali pengikat yang bisa diatur menyesuaikan lingkar kepala",
+    ],
   },
   {
     id: "cycamelia-ciput-arab-tali-oat",
     name: "Cycamelia Ciput Arab Tali Oat",
     price: 18000,
     image: "/images/20.jpg",
-    description: "Ciput terbuat dari bahan kaos Rayon yang halus, lembut, dan nyaman dipakai",
+    description:
+      "Ciput terbuat dari bahan kaos Rayon yang halus, lembut, dan nyaman dipakai",
     category: "ciput",
     size: "All Size",
     details: [
       "Ciput terbuat dari bahan kaos Rayon",
       "Bahan Halus, Lembut, dan nyaman dipakai",
       "Tidak sakit di telinga",
-      "Memiliki tali pengikat yang bisa diatur menyesuaikan lingkar kepala"
-    ]
+      "Memiliki tali pengikat yang bisa diatur menyesuaikan lingkar kepala",
+    ],
   },
   {
     id: "cycamelia-ciput-arab-tali-butter",
     name: "Cycamelia Ciput Arab Tali Butter",
     price: 20000,
     image: "/images/21.jpg",
-    description: "Ciput terbuat dari bahan kaos Rayon yang halus, lembut, dan nyaman dipakai",
+    description:
+      "Ciput terbuat dari bahan kaos Rayon yang halus, lembut, dan nyaman dipakai",
     category: "ciput",
     size: "All Size",
     details: [
       "Ciput terbuat dari bahan kaos Rayon",
       "Bahan Halus, Lembut, dan nyaman dipakai",
       "Tidak sakit di telinga",
-      "Memiliki tali pengikat yang bisa diatur menyesuaikan lingkar kepala"
-    ]
+      "Memiliki tali pengikat yang bisa diatur menyesuaikan lingkar kepala",
+    ],
   },
   {
     id: "cycamelia-ciput-arab-tali-latte",
     name: "Cycamelia Ciput Arab Tali Latte",
     price: 18000,
     image: "/images/22.jpg",
-    description: "Ciput terbuat dari bahan kaos Rayon yang halus, lembut, dan nyaman dipakai",
+    description:
+      "Ciput terbuat dari bahan kaos Rayon yang halus, lembut, dan nyaman dipakai",
     category: "ciput",
     size: "All Size",
     details: [
       "Ciput terbuat dari bahan kaos Rayon",
       "Bahan Halus, Lembut, dan nyaman dipakai",
       "Tidak sakit di telinga",
-      "Memiliki tali pengikat yang bisa diatur menyesuaikan lingkar kepala"
-    ]
-  }
+      "Memiliki tali pengikat yang bisa diatur menyesuaikan lingkar kepala",
+    ],
+  },
 ];
 
 interface PembayaranPageProps {
   params: Promise<{ id: string }>;
 }
 
-export default function SingleProductPembayaran({ params }: PembayaranPageProps) {
+export default function SingleProductPembayaran({
+  params,
+}: PembayaranPageProps) {
   const router = useRouter();
   const [quantity, setQuantity] = useState(1);
   const [productId, setProductId] = useState<string | null>(null);
-  
+
   useEffect(() => {
     const getParams = async () => {
       const resolvedParams = await params;
@@ -380,8 +404,8 @@ export default function SingleProductPembayaran({ params }: PembayaranPageProps)
     getParams();
   }, [params]);
 
-  const product = allProducts.find(p => p.id === productId);
-  
+  const product = allProducts.find((p) => p.id === productId);
+
   useEffect(() => {
     if (productId && !product) {
       router.push("/katalog");
@@ -403,13 +427,14 @@ export default function SingleProductPembayaran({ params }: PembayaranPageProps)
   };
 
   const handleWhatsAppCheckout = () => {
-    const message = `*ORDER BARU - CYCAMELIA*\n\n` +
+    const message =
+      `*ORDER BARU - CYCAMELIA*\n\n` +
       `*Pesanan:*\n` +
       `${product?.name} (x${quantity}) - ${formatPrice((product?.price || 0) * quantity)}\n\n` +
       `*Total: ${formatPrice(totalPrice)}*\n\n` +
       `Mohon konfirmasi ketersediaan dan total pembayaran.`;
-    
-    const whatsappUrl = `https://wa.me/6289653757921?text=${encodeURIComponent(message)}`;
+
+    const whatsappUrl = `https://wa.me/6289635757921?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, "_blank");
   };
 
@@ -420,7 +445,9 @@ export default function SingleProductPembayaran({ params }: PembayaranPageProps)
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">
         <div className="text-center">
           <p>Produk tidak ditemukan</p>
-          <Button onClick={() => router.push("/katalog")}>Kembali ke Katalog</Button>
+          <Button onClick={() => router.push("/katalog")}>
+            Kembali ke Katalog
+          </Button>
         </div>
       </div>
     );
@@ -429,12 +456,15 @@ export default function SingleProductPembayaran({ params }: PembayaranPageProps)
   return (
     <div className="min-h-screen bg-gray-50">
       <Navbar />
-      
+
       {/* Header */}
       <div className="bg-gradient-to-r from-red-600 to-red-700 text-white py-8 animate-fade-in">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex items-center space-x-4">
-            <Link href="/katalog" className="text-white/80 hover:text-white transition-colors">
+            <Link
+              href="/katalog"
+              className="text-white/80 hover:text-white transition-colors"
+            >
               <ArrowLeft className="h-5 w-5" />
             </Link>
             <h1 className="text-3xl font-bold">Pembayaran</h1>
@@ -460,15 +490,23 @@ export default function SingleProductPembayaran({ params }: PembayaranPageProps)
                       className="object-cover"
                     />
                   </div>
-                  
+
                   <div className="flex-1 w-full text-center sm:text-left sm:mt-0">
-                    <h3 className="font-semibold text-lg text-gray-900">{product.name}</h3>
-                    <p className="text-gray-600 text-sm mt-1">{product.description}</p>
+                    <h3 className="font-semibold text-lg text-gray-900">
+                      {product.name}
+                    </h3>
+                    <p className="text-gray-600 text-sm mt-1">
+                      {product.description}
+                    </p>
                     <div className="flex flex-col sm:flex-row sm:items-center space-y-2 sm:space-y-0 sm:space-x-4 mt-2">
-                      <p className="text-red-600 font-semibold text-lg">{formatPrice(product.price)}</p>
-                      <span className="text-sm text-gray-500 bg-gray-100 px-2 py-1 rounded inline-block w-fit mx-auto sm:mx-0">{product.size}</span>
+                      <p className="text-red-600 font-semibold text-lg">
+                        {formatPrice(product.price)}
+                      </p>
+                      <span className="text-sm text-gray-500 bg-gray-100 px-2 py-1 rounded inline-block w-fit mx-auto sm:mx-0">
+                        {product.size}
+                      </span>
                     </div>
-                    
+
                     <div className="flex flex-col sm:flex-row sm:items-center space-y-2 sm:space-y-0 sm:space-x-2 mt-4">
                       <span className="text-sm text-gray-700">Jumlah:</span>
                       <div className="flex items-center space-x-2 mx-auto sm:mx-0">
@@ -483,7 +521,9 @@ export default function SingleProductPembayaran({ params }: PembayaranPageProps)
                         <Input
                           type="number"
                           value={quantity}
-                          onChange={(e) => handleQuantityChange(parseInt(e.target.value) || 1)}
+                          onChange={(e) =>
+                            handleQuantityChange(parseInt(e.target.value) || 1)
+                          }
                           className="w-16 text-center"
                           min="1"
                         />
@@ -499,7 +539,7 @@ export default function SingleProductPembayaran({ params }: PembayaranPageProps)
                     </div>
                   </div>
                 </div>
-                
+
                 {/* Product Details */}
                 <div className="mt-6 p-4 bg-gray-50 rounded-lg">
                   <ul className="space-y-2">
@@ -513,7 +553,6 @@ export default function SingleProductPembayaran({ params }: PembayaranPageProps)
                 </div>
               </CardContent>
             </Card>
-
           </div>
 
           {/* Order Summary */}
@@ -525,16 +564,20 @@ export default function SingleProductPembayaran({ params }: PembayaranPageProps)
               <CardContent className="space-y-4">
                 <div className="space-y-2">
                   <div className="flex justify-between text-sm">
-                    <span>{product.name} x {quantity}</span>
+                    <span>
+                      {product.name} x {quantity}
+                    </span>
                     <span>{formatPrice(product.price * quantity)}</span>
                   </div>
                   <Separator />
                   <div className="flex justify-between font-semibold text-lg">
                     <span>Total</span>
-                    <span className="text-red-600">{formatPrice(totalPrice)}</span>
+                    <span className="text-red-600">
+                      {formatPrice(totalPrice)}
+                    </span>
                   </div>
                 </div>
-                
+
                 <div className="space-y-2 pt-4">
                   <Button
                     className="w-full bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white"

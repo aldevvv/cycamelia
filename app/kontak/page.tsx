@@ -14,13 +14,13 @@ import {
   MessageCircle,
   Instagram,
   Facebook,
-  Send
+  Send,
 } from "lucide-react";
 
 export default function Kontak() {
   const handleWhatsAppContact = () => {
     const message = "Halo, saya ingin bertanya tentang produk Cycamelia.";
-    const whatsappUrl = `https://wa.me/6289653757921?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/6289635757921?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, "_blank");
   };
 
@@ -30,23 +30,24 @@ export default function Kontak() {
     const name = formData.get("name") as string;
     const email = formData.get("email") as string;
     const message = formData.get("message") as string;
-    
+
     const whatsappMessage = `Halo, saya ${name} (${email}). ${message}`;
-    const whatsappUrl = `https://wa.me/6289653757921?text=${encodeURIComponent(whatsappMessage)}`;
+    const whatsappUrl = `https://wa.me/6289635757921?text=${encodeURIComponent(whatsappMessage)}`;
     window.open(whatsappUrl, "_blank");
   };
 
   return (
     <div className="min-h-screen bg-white">
       <Navbar />
-      
+
       {/* Header */}
       <div className="bg-gradient-to-r from-red-600 to-red-700 text-white py-12 animate-fade-in">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-4">
             <h1 className="text-4xl font-bold">Hubungi Kami</h1>
             <p className="text-lg text-amber-50 max-w-2xl mx-auto">
-              Kami siap membantu Anda menemukan hijab sempurna untuk setiap occasion
+              Kami siap membantu Anda menemukan hijab sempurna untuk setiap
+              occasion
             </p>
           </div>
         </div>
@@ -58,9 +59,11 @@ export default function Kontak() {
           {/* Contact Information */}
           <div className="space-y-8">
             <div className="space-y-6">
-              <h2 className="text-2xl font-bold text-gray-900">Informasi Kontak</h2>
+              <h2 className="text-2xl font-bold text-gray-900">
+                Informasi Kontak
+              </h2>
               <p className="text-gray-600">
-                Tim customer service kami siap membantu Anda dengan senang hati. 
+                Tim customer service kami siap membantu Anda dengan senang hati.
                 Hubungi kami melalui berbagai cara berikut:
               </p>
             </div>
@@ -74,8 +77,12 @@ export default function Kontak() {
                       <MessageCircle className="h-6 w-6 text-red-600" />
                     </div>
                     <div className="flex-1">
-                      <h3 className="font-semibold text-gray-900 text-lg">WhatsApp</h3>
-                      <p className="text-gray-600 mt-1">Respon tercepat untuk pertanyaan dan pemesanan</p>
+                      <h3 className="font-semibold text-gray-900 text-lg">
+                        WhatsApp
+                      </h3>
+                      <p className="text-gray-600 mt-1">
+                        Respon tercepat untuk pertanyaan dan pemesanan
+                      </p>
                       <div className="mt-3">
                         <Button
                           className="bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white"
@@ -98,9 +105,13 @@ export default function Kontak() {
                       <Phone className="h-6 w-6 text-red-600" />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-gray-900 text-lg">Telepon</h3>
-                      <p className="text-gray-600 mt-1">089653757921</p>
-                      <p className="text-sm text-gray-500 mt-1">Senin - Sabtu, 09:00 - 18:00 WIB</p>
+                      <h3 className="font-semibold text-gray-900 text-lg">
+                        Telepon
+                      </h3>
+                      <p className="text-gray-600 mt-1">089635757921</p>
+                      <p className="text-sm text-gray-500 mt-1">
+                        Senin - Sabtu, 09:00 - 18:00 WIB
+                      </p>
                     </div>
                   </div>
                 </CardContent>
@@ -114,9 +125,15 @@ export default function Kontak() {
                       <Mail className="h-6 w-6 text-red-600" />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-gray-900 text-lg">Email</h3>
-                      <p className="text-gray-600 mt-1">support@cycamelia.my.id</p>
-                      <p className="text-sm text-gray-500 mt-1">Respon dalam 24 jam</p>
+                      <h3 className="font-semibold text-gray-900 text-lg">
+                        Email
+                      </h3>
+                      <p className="text-gray-600 mt-1">
+                        support@cycamelia.my.id
+                      </p>
+                      <p className="text-sm text-gray-500 mt-1">
+                        Respon dalam 24 jam
+                      </p>
                     </div>
                   </div>
                 </CardContent>
@@ -130,10 +147,14 @@ export default function Kontak() {
                       <MapPin className="h-6 w-6 text-red-600" />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-gray-900 text-lg">Alamat</h3>
+                      <h3 className="font-semibold text-gray-900 text-lg">
+                        Alamat
+                      </h3>
                       <p className="text-gray-600 mt-1">
-                        Jl. A.P Pettarani<br />
-                        Kota Makassar 90222<br />
+                        Jl. A.P Pettarani
+                        <br />
+                        Kota Makassar 90222
+                        <br />
                         Indonesia
                       </p>
                     </div>
@@ -144,7 +165,9 @@ export default function Kontak() {
 
             {/* Social Media */}
             <div className="space-y-4">
-              <h3 className="font-semibold text-gray-900 text-lg">Ikuti Kami</h3>
+              <h3 className="font-semibold text-gray-900 text-lg">
+                Ikuti Kami
+              </h3>
               <div className="flex space-x-4">
                 <a
                   href="https://instagram.com/cycamelia.id"
@@ -163,7 +186,8 @@ export default function Kontak() {
             <div className="space-y-6">
               <h2 className="text-2xl font-bold text-gray-900">Kirim Pesan</h2>
               <p className="text-gray-600">
-                Isi formulir di bawah ini dan kami akan menghubungi Anda segera melalui WhatsApp.
+                Isi formulir di bawah ini dan kami akan menghubungi Anda segera
+                melalui WhatsApp.
               </p>
             </div>
 
@@ -172,43 +196,55 @@ export default function Kontak() {
                 <form onSubmit={handleFormSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     <div className="space-y-2">
-                      <label htmlFor="name" className="text-sm font-medium text-gray-700">
+                      <label
+                        htmlFor="name"
+                        className="text-sm font-medium text-gray-700"
+                      >
                         Nama Lengkap
                       </label>
-                      <Input 
-                        id="name" 
+                      <Input
+                        id="name"
                         name="name"
-                        placeholder="Masukkan nama Anda" 
+                        placeholder="Masukkan nama Anda"
                         required
                       />
                     </div>
                     <div className="space-y-2">
-                      <label htmlFor="email" className="text-sm font-medium text-gray-700">
+                      <label
+                        htmlFor="email"
+                        className="text-sm font-medium text-gray-700"
+                      >
                         Email
                       </label>
-                      <Input 
-                        id="email" 
+                      <Input
+                        id="email"
                         name="email"
-                        type="email" 
-                        placeholder="email@example.com" 
+                        type="email"
+                        placeholder="email@example.com"
                         required
                       />
                     </div>
                   </div>
 
                   <div className="space-y-2">
-                    <label htmlFor="subject" className="text-sm font-medium text-gray-700">
+                    <label
+                      htmlFor="subject"
+                      className="text-sm font-medium text-gray-700"
+                    >
                       Subjek
                     </label>
-                    <Input 
-                      id="subject" 
+                    <Input
+                      id="subject"
                       name="subject"
-                      placeholder="Tentang apa Anda ingin bertanya?" 
+                      placeholder="Tentang apa Anda ingin bertanya?"
                     />
                   </div>
 
                   <div className="space-y-2">
-                    <label htmlFor="message" className="text-sm font-medium text-gray-700">
+                    <label
+                      htmlFor="message"
+                      className="text-sm font-medium text-gray-700"
+                    >
                       Pesan
                     </label>
                     <textarea
@@ -221,8 +257,8 @@ export default function Kontak() {
                     ></textarea>
                   </div>
 
-                  <Button 
-                    type="submit" 
+                  <Button
+                    type="submit"
                     className="w-full bg-gradient-to-r from-red-600 to-red-700 hover:from-amber-400 hover:to-amber-500 text-white"
                   >
                     <Send className="h-4 w-4 mr-2" />
@@ -230,7 +266,8 @@ export default function Kontak() {
                   </Button>
 
                   <p className="text-sm text-gray-500 text-center">
-                    Pesan Anda akan langsung terkirim ke WhatsApp kami untuk respon lebih cepat
+                    Pesan Anda akan langsung terkirim ke WhatsApp kami untuk
+                    respon lebih cepat
                   </p>
                 </form>
               </CardContent>
@@ -244,15 +281,21 @@ export default function Kontak() {
                     <Clock className="h-6 w-6 text-red-600" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-gray-900 text-lg mb-3">Jam Operasional</h3>
+                    <h3 className="font-semibold text-gray-900 text-lg mb-3">
+                      Jam Operasional
+                    </h3>
                     <div className="space-y-2 text-sm">
                       <div className="flex justify-between">
                         <span className="text-gray-600">Senin - Jumat</span>
-                        <span className="text-gray-900 font-medium">09:00 - 18:00 WIB</span>
+                        <span className="text-gray-900 font-medium">
+                          09:00 - 18:00 WIB
+                        </span>
                       </div>
                       <div className="flex justify-between">
                         <span className="text-gray-600">Sabtu</span>
-                        <span className="text-gray-900 font-medium">09:00 - 15:00 WIB</span>
+                        <span className="text-gray-900 font-medium">
+                          09:00 - 15:00 WIB
+                        </span>
                       </div>
                       <div className="flex justify-between">
                         <span className="text-gray-600">Minggu</span>

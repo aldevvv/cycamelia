@@ -110,7 +110,7 @@ export default function Kontak() {
                       </h3>
                       <p className="text-gray-600 mt-1">089635757921</p>
                       <p className="text-sm text-gray-500 mt-1">
-                        Senin - Sabtu, 09:00 - 18:00 WIB
+                        Senin - Sabtu, 10:00 - 20:00 WITA
                       </p>
                     </div>
                   </div>
@@ -151,7 +151,7 @@ export default function Kontak() {
                         Alamat
                       </h3>
                       <p className="text-gray-600 mt-1">
-                        Jl. A.P Pettarani
+                        Jl. ARSITEKTUR 
                         <br />
                         Kota Makassar 90222
                         <br />

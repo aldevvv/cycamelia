@@ -23,7 +23,7 @@ const allProducts = [
   {
     id: "cycamelia-earthone-series",
     name: "Cycamelia Earthone Series",
-    price: 18000,
+    price: 20000,
     image: "/images/1.jpg",
     description:
       "Paris Premium dengan bahan yang lebih flowy, soft dan tegak saat dipakai",
@@ -40,7 +40,7 @@ const allProducts = [
   {
     id: "cycamelia-delux-series",
     name: "Cycamelia Delux Series",
-    price: 18000,
+    price: 20000,
     image: "/images/2.jpg",
     description:
       "Paris Premium dengan bahan yang flowy, soft, dan tegak saat dipakai",
@@ -74,7 +74,7 @@ const allProducts = [
   {
     id: "cycamelia-neutral-series",
     name: "Cycamelia Neutral Series",
-    price: 18000,
+    price: 20000,
     image: "/images/4.jpg",
     description:
       "Paris Premium dengan bahan yang lebih flowy, soft dan tegak saat dipakai",
@@ -125,11 +125,11 @@ const allProducts = [
   {
     id: "cycamelia-royale-series",
     name: "Cycamelia Royale series",
-    price: 18000,
+    price: 20000,
     image: "/images/7.jpg",
     description:
       "Paris Premium dengan bahan yang lebih flowy, soft dan tegak saat dipakai",
-    category: "ciput",
+    category: "square",
     size: "All Size",
     details: [
       "Material Paris Premium",
@@ -159,11 +159,11 @@ const allProducts = [
   {
     id: "cycamelia-elegant-series",
     name: "Cycamelia Elegant Series",
-    price: 18000,
+    price: 20000,
     image: "/images/9.jpg",
     description:
       "Paris Premium dengan bahan yang lebih flowy, soft dan tegak saat dipakai",
-    category: "ciput",
+    category: "square",
     size: "All Size",
     details: [
       "Material Paris Premium",
@@ -176,7 +176,7 @@ const allProducts = [
   {
     id: "cycamelia-mist-series",
     name: "Cycamelia Mist series",
-    price: 18000,
+    price: 20000,
     image: "/images/10.jpg",
     description:
       "Paris Premium dengan bahan yang lebih flowy, soft dan tegak saat dipakai",
@@ -242,11 +242,11 @@ const allProducts = [
   {
     id: "cycamelia-ciput-arab-tali-taupe",
     name: "Cycamelia Ciput Arab Tali Taupe",
-    price: 20000,
+    price: 18000,
     image: "/images/14.jpg",
     description:
       "Ciput terbuat dari bahan kaos Rayon yang halus, lembut, dan nyaman dipakai",
-    category: "square",
+    category: "ciput",
     size: "110 × 110cm",
     details: [
       "Ciput terbuat dari bahan kaos Rayon",
@@ -274,7 +274,7 @@ const allProducts = [
   {
     id: "cycamelia-ciput-arab-tali-abu-abu",
     name: "Cycamelia Ciput Arab Tali Abu-abu",
-    price: 20000,
+    price: 18000,
     image: "/images/16.jpg",
     description:
       "Ciput terbuat dari bahan kaos Rayon yang halus, lembut, dan nyaman dipakai",
@@ -290,7 +290,7 @@ const allProducts = [
   {
     id: "cycamelia-ciput-arab-tali-milo",
     name: "Cycamelia Ciput Arab Tali Milo",
-    price: 20000,
+    price: 18000,
     image: "/images/17.jpg",
     description:
       "Ciput terbuat dari bahan kaos Rayon yang halus, lembut, dan nyaman dipakai",
@@ -322,7 +322,7 @@ const allProducts = [
   {
     id: "cycamelia-ciput-arab-tali-nude",
     name: "Cycamelia Ciput Arab Tali Nude",
-    price: 20000,
+    price: 18000,
     image: "/images/19.jpg",
     description:
       "Ciput terbuat dari bahan kaos Rayon yang halus, lembut, dan nyaman dipakai",
@@ -354,7 +354,7 @@ const allProducts = [
   {
     id: "cycamelia-ciput-arab-tali-butter",
     name: "Cycamelia Ciput Arab Tali Butter",
-    price: 20000,
+    price: 18000,
     image: "/images/21.jpg",
     description:
       "Ciput terbuat dari bahan kaos Rayon yang halus, lembut, dan nyaman dipakai",

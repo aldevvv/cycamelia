@@ -11,11 +11,19 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { Input } from "@/components/ui/input";
 import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import {
   Minus,
   Plus,
   ArrowLeft,
   ShoppingBag,
   MessageCircle,
+  CreditCard,
 } from "lucide-react";
 
 // Sample product data - 22 products sesuai dengan file Produk Cycamelia.docx
@@ -395,6 +403,21 @@ export default function SingleProductPembayaran({
   const router = useRouter();
   const [quantity, setQuantity] = useState(1);
   const [productId, setProductId] = useState<string | null>(null);
+  const [selectedColor, setSelectedColor] = useState<string>("");
+
+  // Available colors for the products
+  const availableColors = [
+    "Putih",
+    "Hitam",
+    "Abu-abu",
+    "Navy",
+    "Maroon",
+    "Coklat",
+    "Cream",
+    "Dusty Pink",
+    "Sage Green",
+    "Mocca",
+  ];
 
   useEffect(() => {
     const getParams = async () => {
@@ -427,11 +450,22 @@ export default function SingleProductPembayaran({
   };
 
   const handleWhatsAppCheckout = () => {
+    if (!selectedColor) {
+      alert("Silakan pilih warna terlebih dahulu");
+      return;
+    }
+
     const message =
       `*ORDER BARU - CYCAMELIA*\n\n` +
       `*Pesanan:*\n` +
-      `${product?.name} (x${quantity}) - ${formatPrice((product?.price || 0) * quantity)}\n\n` +
+      `${product?.name} (x${quantity})\n` +
+      `Warna: ${selectedColor}\n` +
+      `Harga: ${formatPrice((product?.price || 0) * quantity)}\n\n` +
       `*Total: ${formatPrice(totalPrice)}*\n\n` +
+      `*Informasi Pembayaran:*\n` +
+      `Bank BCA\n` +
+      `No. Rekening: 7892312519\n` +
+      `A.N: FATHUL AZIZAH MASYKUR\n\n` +
       `Mohon konfirmasi ketersediaan dan total pembayaran.`;
 
     const whatsappUrl = `https://wa.me/6289635757921?text=${encodeURIComponent(message)}`;
@@ -507,6 +541,27 @@ export default function SingleProductPembayaran({
                       </span>
                     </div>
 
+                    {/* Color Selection */}
+                    <div className="flex flex-col sm:flex-row sm:items-center space-y-2 sm:space-y-0 sm:space-x-2 mt-4">
+                      <span className="text-sm text-gray-700">Warna:</span>
+                      <Select
+                        value={selectedColor}
+                        onValueChange={setSelectedColor}
+                      >
+                        <SelectTrigger className="w-full sm:w-48">
+                          <SelectValue placeholder="Pilih warna" />
+                        </SelectTrigger>
+                        <SelectContent>
+                          {availableColors.map((color) => (
+                            <SelectItem key={color} value={color}>
+                              {color}
+                            </SelectItem>
+                          ))}
+                        </SelectContent>
+                      </Select>
+                    </div>
+
+                    {/* Quantity Selection */}
                     <div className="flex flex-col sm:flex-row sm:items-center space-y-2 sm:space-y-0 sm:space-x-2 mt-4">
                       <span className="text-sm text-gray-700">Jumlah:</span>
                       <div className="flex items-center space-x-2 mx-auto sm:mx-0">
@@ -569,6 +624,12 @@ export default function SingleProductPembayaran({
                     </span>
                     <span>{formatPrice(product.price * quantity)}</span>
                   </div>
+                  {selectedColor && (
+                    <div className="flex justify-between text-sm text-gray-600">
+                      <span>Warna:</span>
+                      <span>{selectedColor}</span>
+                    </div>
+                  )}
                   <Separator />
                   <div className="flex justify-between font-semibold text-lg">
                     <span>Total</span>
@@ -578,16 +639,43 @@ export default function SingleProductPembayaran({
                   </div>
                 </div>
 
+                {/* Bank Information */}
+                <div className="mt-4 p-4 bg-blue-50 rounded-lg border border-blue-200">
+                  <div className="flex items-center mb-2">
+                    <CreditCard className="h-4 w-4 text-blue-600 mr-2" />
+                    <span className="font-semibold text-blue-900">
+                      Informasi Pembayaran
+                    </span>
+                  </div>
+                  <div className="space-y-1 text-sm text-blue-800">
+                    <div className="flex justify-between">
+                      <span>Bank:</span>
+                      <span className="font-medium">BCA</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span>No. Rekening:</span>
+                      <span className="font-medium">7892312519</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span>Atas Nama:</span>
+                      <span className="font-medium">FATHUL AZIZAH MASYKUR</span>
+                    </div>
+                  </div>
+                </div>
+
                 <div className="space-y-2 pt-4">
                   <Button
-                    className="w-full bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white"
+                    className="w-full bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white disabled:opacity-50"
                     onClick={handleWhatsAppCheckout}
+                    disabled={!selectedColor}
                   >
                     <MessageCircle className="h-4 w-4 mr-2" />
                     Konfirmasi Pesanan via WhatsApp
                   </Button>
                   <p className="text-xs text-gray-500 text-center">
-                    Anda akan diarahkan ke WhatsApp untuk konfirmasi pesanan
+                    {!selectedColor
+                      ? "Pilih warna untuk melanjutkan"
+                      : "Anda akan diarahkan ke WhatsApp untuk konfirmasi pesanan"}
                   </p>
                 </div>
               </CardContent>

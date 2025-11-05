@@ -503,10 +503,35 @@ export default function SingleProductPembayaran({
     product?.name.toLowerCase().includes("latte") ||
     product?.category === "ciput";
 
-  const handleWhatsAppCheckout = () => {
+  const handleWhatsAppCheckout = async () => {
     if (!hasColorInName && !selectedColor) {
       alert("Silakan pilih warna terlebih dahulu");
       return;
+    }
+
+    try {
+      // Save order to database
+      const response = await fetch('/api/orders', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          productId: product?.id,
+          productName: product?.name,
+          productPrice: product?.price,
+          productImage: product?.image,
+          quantity,
+          color: hasColorInName ? null : selectedColor,
+          totalPrice,
+        }),
+      });
+
+      if (!response.ok) {
+        console.error('Failed to save order');
+      }
+    } catch (error) {
+      console.error('Error saving order:', error);
     }
 
     const colorInfo = hasColorInName ? "" : `Warna: ${selectedColor}\n`;

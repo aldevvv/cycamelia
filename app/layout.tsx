@@ -13,9 +13,9 @@ export const metadata: Metadata = {
   keywords: ["hijab premium", "hijab eksklusif", "hijab berkualitas", "Cycamelia"],
   authors: [{ name: "Cycamelia" }],
   icons: {
-    icon: "/images/Logo.jpg",
-    shortcut: "/images/Logo.jpg",
-    apple: "/images/Logo.jpg",
+    icon: "/images/logo-new.jpeg",
+    shortcut: "/images/logo-new.jpeg",
+    apple: "/images/logo-new.jpeg",
   },
   openGraph: {
     title: "Cycamelia - Premium Hijab Collection",
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/images/Logo.jpg",
+        url: "/images/logo-new.jpeg",
         width: 800,
         height: 800,
         alt: "Cycamelia Logo",

@@ -542,11 +542,7 @@ export default function SingleProductPembayaran({
       colorInfo +
       `Harga: ${formatPrice((product?.price || 0) * quantity)}\n\n` +
       `*Total: ${formatPrice(totalPrice)}*\n\n` +
-      `*Informasi Pembayaran:*\n` +
-      `Bank BCA\n` +
-      `No. Rekening: 7892312519\n` +
-      `A.N: FATHUL AZIZAH MASYKUR\n\n` +
-      `Mohon konfirmasi ketersediaan dan total pembayaran.`;
+      `Mohon kirim bukti transfer untuk konfirmasi pesanan.`;
 
     const whatsappUrl = `https://wa.me/6289635757921?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, "_blank");
